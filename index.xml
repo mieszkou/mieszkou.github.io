@@ -6,7 +6,22 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
-    <lastBuildDate>Sat, 04 Feb 2023 19:32:30 +0100</lastBuildDate><atom:link href="http://mieszkou.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Feb 2023 22:19:09 +0100</lastBuildDate><atom:link href="http://mieszkou.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pierwszy</title>
+      <link>http://mieszkou.github.io/posts/pierwszy/</link>
+      <pubDate>Sat, 04 Feb 2023 22:19:09 +0100</pubDate>
+      
+      <guid>http://mieszkou.github.io/posts/pierwszy/</guid>
+      <description>Pierwszy post z vscode I zobaczmy obrazek
+Ciekawe</description>
+      <content:encoded><![CDATA[<h1 id="pierwszy-post-z-vscode">Pierwszy post z vscode</h1>
+<p>I zobaczmy obrazek</p>
+<p><img loading="lazy" src="/posts/pierwszy/assets/2023-02-04-22-19-53.png" type="" alt=""  /></p>
+<p>Ciekawe</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Start</title>
       <link>http://mieszkou.github.io/posts/start/</link>
