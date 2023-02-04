@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>http://mieszkou.github.io/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
+    <lastBuildDate>Sat, 04 Feb 2023 19:32:30 +0100</lastBuildDate><atom:link href="http://mieszkou.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Start</title>
+      <link>http://mieszkou.github.io/posts/start/</link>
+      <pubDate>Sat, 04 Feb 2023 19:32:30 +0100</pubDate>
+      
+      <guid>http://mieszkou.github.io/posts/start/</guid>
+      <description>Testowy wpis na dobry początek Troche tekstu, pl znaczki ęóąśłżźćńĘÓĄŚŁŻŹĆŃ i jeszcze trochę tekstu
+lista z kolejnymi pozycjami o t asdf asdfasdfas # komentarz $Parsedown = new Parsedown(); echo $Parsedown-&amp;gt;text(&amp;#39;Hello _Parsedown_!&amp;#39;); # prints: &amp;lt;p&amp;gt;Hello &amp;lt;em&amp;gt;Parsedown&amp;lt;/em&amp;gt;!&amp;lt;/p&amp;gt; Jeszcze jakis tekst i coś
+Jeszcze jakis tekst i coś sdf sdfg sdfg sdfg s
+No dobra to zobaczmy jak o wychodzi</description>
+      <content:encoded><![CDATA[<h1 id="testowy-wpis-na-dobry-początek">Testowy wpis na dobry początek</h1>
+<p>Troche tekstu, pl znaczki ęóąśłżźćńĘÓĄŚŁŻŹĆŃ i jeszcze trochę tekstu</p>
+<ul>
+<li>lista</li>
+<li>z kolejnymi pozycjami</li>
+<li>o t asdf</li>
+<li>asdfasdfas</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="c1"># komentarz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$Parsedown</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Parsedown</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nv">$Parsedown</span><span class="o">-&gt;</span><span class="na">text</span><span class="p">(</span><span class="s1">&#39;Hello _Parsedown_!&#39;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># prints: &lt;p&gt;Hello &lt;em&gt;Parsedown&lt;/em&gt;!&lt;/p&gt;
+</span></span></span></code></pre></div><p>
+<img loading="lazy" src="/assets/2023-02-04-19-38-47.png" type="" alt=""  />
+</p>
+<p>Jeszcze jakis tekst i coś</p>
+<p>Jeszcze jakis tekst i coś sdf sdfg sdfg sdfg s</p>
+<p>No dobra to zobaczmy jak o wychodzi</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Start asdas</title>
+      <link>http://mieszkou.github.io/posts/start-with/post-2/</link>
+      <pubDate>Sat, 04 Feb 2023 19:32:30 +0100</pubDate>
+      
+      <guid>http://mieszkou.github.io/posts/start-with/post-2/</guid>
+      <description>Testowy wpis na dobry początek Troche tekstu, pl znaczki ęóąśłżźćńĘÓĄŚŁŻŹĆŃ i jeszcze trochę tekstu</description>
+      <content:encoded><![CDATA[<h1 id="testowy-wpis-na-dobry-początek">Testowy wpis na dobry początek</h1>
+<p>Troche tekstu, pl znaczki ęóąśłżźćńĘÓĄŚŁŻŹĆŃ i jeszcze trochę tekstu</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Start z obrazkami</title>
+      <link>http://mieszkou.github.io/posts/start-with-img/</link>
+      <pubDate>Sat, 04 Feb 2023 19:32:30 +0100</pubDate>
+      
+      <guid>http://mieszkou.github.io/posts/start-with-img/</guid>
+      <description>Testowy wpis na dobry początek Troche tekstu, pl znaczki ęóąśłżźćńĘÓĄŚŁŻŹĆŃ i jeszcze trochę tekstu
+lista z kolejnymi pozycjami o t asdf asdfasdfas # komentarz $Parsedown = new Parsedown(); echo $Parsedown-&amp;gt;text(&amp;#39;Hello _Parsedown_!&amp;#39;); # prints: &amp;lt;p&amp;gt;Hello &amp;lt;em&amp;gt;Parsedown&amp;lt;/em&amp;gt;!&amp;lt;/p&amp;gt; Jeszcze jakis tekst i coś sdf sdfg sdfg sdfg s
+No dobra to zobaczmy jak o wychodzi</description>
+      <content:encoded><![CDATA[<h1 id="testowy-wpis-na-dobry-początek">Testowy wpis na dobry początek</h1>
+<p>Troche tekstu, pl znaczki ęóąśłżźćńĘÓĄŚŁŻŹĆŃ i jeszcze trochę tekstu</p>
+<ul>
+<li>lista</li>
+<li>z kolejnymi pozycjami</li>
+<li>o t asdf</li>
+<li>asdfasdfas</li>
+</ul>
+<p><img loading="lazy" src="/posts/start-with-img/assets/2023-02-04-20-30-19.png" type="" alt=""  /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="c1"># komentarz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$Parsedown</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Parsedown</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nv">$Parsedown</span><span class="o">-&gt;</span><span class="na">text</span><span class="p">(</span><span class="s1">&#39;Hello _Parsedown_!&#39;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># prints: &lt;p&gt;Hello &lt;em&gt;Parsedown&lt;/em&gt;!&lt;/p&gt;
+</span></span></span></code></pre></div><p><img loading="lazy" src="/posts/start-with-img/assets/2023-02-04-19-38-47.png" type="" alt=""  /></p>
+<p>Jeszcze jakis tekst i coś sdf sdfg sdfg sdfg s</p>
+<p>
+  <img loading="lazy" src="http://localhost:62877/posts/start-with-img/assets/2023-02-04-19-38-47.png" alt=""  /></p>
+<p>No dobra to zobaczmy jak o wychodzi</p>
+<p><img loading="lazy" src="/posts/start-with-img/assets/2023-02-04-19-38-47.png" type="" alt="Alt text"  /></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
