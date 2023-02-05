@@ -12,3 +12,7 @@ I zobaczmy obrazek
 
 Ciekawe
 
+https://www.youtube.com/watch?v=qLkFMqn9gGc
+
+cdn..
+

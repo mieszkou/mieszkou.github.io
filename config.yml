@@ -1,6 +1,6 @@
 baseURL: http://mieszkou.github.io
 languageCode: pl
-title: My New Hugo Site
+title: urbanowski.info
 theme: PaperModX
 
 # NOTE remove this line if you copy exampleSite outof hugo-PaperModX
@@ -42,18 +42,18 @@ params:
   EnableInstantClick: true
   EnableImageZoom: true
 
-  commentSystems:
-    disqus:
-      shortname: reorx
-    remark42:
-      url: https://remark42.reorx.com
-      site: reorx.github.io
-    telegramWidget:
-      channel: reorx_share
-      accentColor: "9077e1"
-      limit: 20
-  defaultCommentSystems:
-    remark42: true
+  # commentSystems:
+  #   disqus:
+  #     shortname: reorx
+  #   remark42:
+  #     url: https://remark42.reorx.com
+  #     site: reorx.github.io
+  #   telegramWidget:
+  #     channel: reorx_share
+  #     accentColor: "9077e1"
+  #     limit: 20
+  # defaultCommentSystems:
+  #   remark42: true
 
   profileMode:
     enabled: false
@@ -68,27 +68,27 @@ params:
       - name: Tags
         url: /tags/
 
-  homeInfoParams:
-    Title: "PaperModX"
-    Content: |
-      Welcome to demo of hugo's theme PaperModX.
+  # homeInfoParams:
+  #   Title: "PaperModX"
+  #   Content: |
+  #     Welcome to demo of hugo's theme PaperModX.
 
-      - **PaperModX** is a simple but fast and responsive theme with useful feature-set that enhances UX.
+  #     - **PaperModX** is a simple but fast and responsive theme with useful feature-set that enhances UX.
 
-      - PaperModX is based on theme [PaperMod](https://github.com/adityatelange/hugo-PaperMod).
+  #     - PaperModX is based on theme [PaperMod](https://github.com/adityatelange/hugo-PaperMod).
 
-      To get started, please head to the [Docs](docs).
+  #     To get started, please head to the [Docs](docs).
 
-      To see examples of different contents, head to [examples tag](tags/example).
+  #     To see examples of different contents, head to [examples tag](tags/example).
 
   socialIcons:
     - name: github-simple
-      url: "https://github.com/reorx/hugo-PaperModX"
+      url: "https://github.com/mieszkou"
     - name: rss-simple
       url: "index.xml"
 
   editPost:
-    URL: "https://github.com/reorx/hugo-PaperModX/tree/exampleSite/content"
+    URL: "https://github.com/mieszkou/mieszkou.github.io/tree/exampleSite/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -143,49 +143,10 @@ languages:
         - name: Search
           url: /search/
           weight: 10
-        - name: "@Author"
-          url: "https://reorx.com"
-          params:
-            external: true
-
-  zh:
-    languageName: ":cn:"
-    languageAltTitle: 中文
-    weight: 2
-    title: PaperModX
-    profileMode:
-      enabled: true
-      title: PaperModX
-      # imageUrl: "#"
-      # imageTitle: my image
-      # imageWidth: 120
-      # imageHeight: 120
-      subtitle: >
-        <p>Hugo 主题</p>
-        ☄️ 快速 | ☁️ 流畅 | 📖 可读性 | 📱 响应式
-      buttons:
-        - name: 文档
-          url: docs
-        - name: 标签
-          url: tags
-    menu:
-      main:
-        - name: 文档
-          url: docs
-          weight: 1
-        - name: 标签
-          url: tags/
-          weight: 4
-        - name: 归档
-          url: archives
-          weight: 5
-        - name: 搜索
-          url: search/
-          weight: 10
-        - name: "@作者"
-          url: "https://reorx.com"
-          params:
-            external: true
+        # - name: "@Author"
+        #   url: "https://reorx.com"
+        #   params:
+        #     external: true
 
 outputs:
   home:
