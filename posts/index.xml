@@ -52,7 +52,7 @@ No dobra to zobaczmy jak o wychodzi</description>
 </span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nv">$Parsedown</span><span class="o">-&gt;</span><span class="na">text</span><span class="p">(</span><span class="s1">&#39;Hello _Parsedown_!&#39;</span><span class="p">);</span> 
 </span></span><span class="line"><span class="cl"><span class="c1"># prints: &lt;p&gt;Hello &lt;em&gt;Parsedown&lt;/em&gt;!&lt;/p&gt;
 </span></span></span></code></pre></div><p>
-<img loading="lazy" src="/assets/2023-02-04-19-38-47.png" type="" alt=""  />
+
 </p>
 <p>Jeszcze jakis tekst i coś</p>
 <p>Jeszcze jakis tekst i coś sdf sdfg sdfg sdfg s</p>
