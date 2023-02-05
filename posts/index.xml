@@ -15,7 +15,8 @@
       <guid>http://mieszkou.github.io/posts/pierwszy/</guid>
       <description>Pierwszy post z vscode I zobaczmy obrazek
 Ciekawe
-cdn..</description>
+cdn..
+Dodajmy Jakieś Litery</description>
       <content:encoded><![CDATA[<h1 id="pierwszy-post-z-vscode">Pierwszy post z vscode</h1>
 <p>I zobaczmy obrazek</p>
 <p><img loading="lazy" src="/posts/pierwszy/assets/2023-02-04-22-19-53.png" type="" alt=""  /></p>
@@ -26,6 +27,7 @@ cdn..</description>
 </div>
 
 <p>cdn..</p>
+<p>Dodajmy Jakieś Litery</p>
 ]]></content:encoded>
     </item>
     
