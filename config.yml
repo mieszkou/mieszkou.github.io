@@ -42,18 +42,18 @@ params:
   EnableInstantClick: true
   EnableImageZoom: true
 
-  # commentSystems:
-  #   disqus:
-  #     shortname: reorx
-  #   remark42:
-  #     url: https://remark42.reorx.com
-  #     site: reorx.github.io
-  #   telegramWidget:
-  #     channel: reorx_share
-  #     accentColor: "9077e1"
-  #     limit: 20
-  # defaultCommentSystems:
-  #   remark42: true
+  commentSystems:
+    disqus:
+      shortname: reorx
+    remark42:
+      url: https://remark42.reorx.com
+      site: reorx.github.io
+    telegramWidget:
+      channel: urbanowski_info_comments
+      accentColor: "9077e1"
+      limit: 20
+  defaultCommentSystems:
+    telegramWidget: true
 
   profileMode:
     enabled: false
@@ -109,14 +109,16 @@ params:
   #     hiddenInList: true # hide on list pages and home
   #     hiddenInSingle: true # hide on single page
 
-  # fuseOpts:
-  #     isCaseSensitive: false
-  #     shouldSort: true
-  #     location: 0
-  #     distance: 1000
-  #     threshold: 0.4
-  #     minMatchCharLength: 0
-  #     keys: ["title", "permalink", "summary", "content"]
+  fuseOpts:
+     includeScore: true
+     includeMatches: true
+     isCaseSensitive: false
+     shouldSort: true
+     location: 0
+     distance: 1000
+     threshold: 0.4
+     minMatchCharLength: 2
+     keys: ["title", "permalink", "summary", "content"]
 
 minify:
   disableXML: true
