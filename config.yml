@@ -8,7 +8,7 @@ paginate: 10
 #   posts: /:title/
 
 # Change it to your Disqus shortname before using
-disqusShortname: hugo-theme-stack
+disqusShortname: https-urbanowski-info.disqus.com
 
 # GA Tracking ID
 googleAnalytics: G-X7XELVYBWS
@@ -57,7 +57,7 @@ params:
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: false
+        enabled: true
         provider: disqus
 
         disqusjs:
