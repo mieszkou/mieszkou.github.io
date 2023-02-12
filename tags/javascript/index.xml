@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>javascript on urbanowski.info</title><link>/tags/javascript/</link><description>Recent content in javascript on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Tue, 14 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>Electron: creating portable windows application</title><link>/electron-creating-portable-windows-application/</link><pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate><guid>/electron-creating-portable-windows-application/</guid><description>&lt;h2 id="how-to-create-a-portable-windows-application-without-an-installer-from-an-electron-project">How to create a portable windows application without an installer from an electron project:&lt;/h2>
+&lt;p>Clone the electron-quick-start repo:
+git clone &lt;a class="link" href="https://github.com/electron/electron-quick-start" target="_blank" rel="noopener"
+>https://github.com/electron/electron-quick-start&lt;/a>
+yarn
+Make your application - probably edit main.js to navigate to some URL
+yarn add electron-packager
+Edit package.json - update the &amp;rsquo;name&amp;rsquo; and add a new script &amp;lsquo;packager&amp;rsquo;:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;my-app-name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="err">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;start&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;electron .&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;packager&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;electron-packager ./ --platform=win32&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&amp;rsquo;npm start&amp;rsquo; will bring up the application
+&amp;rsquo;npm run packager&amp;rsquo; will package the app for windows. You will see a new directory &amp;lsquo;my-app-name-win32-x64&amp;rsquo; in the top directory of the project, with a my-app-name.exe&lt;/p></description></item></channel></rss>

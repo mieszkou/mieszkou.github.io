@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>urbanowski.info</title><link>/post/2022/</link><description>Recent content on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Fri, 29 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/2022/index.xml" rel="self" type="application/rss+xml"/><item><title>SQL: pętla z opóźnieniem</title><link>/sql-p%C4%99tla-z-op%C3%B3%C5%BAnieniem/</link><pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate><guid>/sql-p%C4%99tla-z-op%C3%B3%C5%BAnieniem/</guid><description>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">--CREATE 5 RANDOM ORDERS BY CUSTOMER ID 4, MONITOR FOR ALERTS IN SLACK.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">WHILE&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">I&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">BEGIN&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">SET&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">M&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ROUND&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">RAND&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">12&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">SET&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">D&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ROUND&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">RAND&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">28&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">SET&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">Y&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">2020&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">SET&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">DT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">CAST&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">M&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">AS&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">VARCHAR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">CAST&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">D&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">AS&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">VARCHAR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">CAST&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">Y&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">AS&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">VARCHAR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">)))&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">SET&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">AMT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ROUND&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">RAND&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">600&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">INSERT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">INTO&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Orders&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">VALUES&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">DT&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">AMT&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;Random&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">SET&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">I&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="n">I&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">WAITFOR&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">DELAY&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;00:00:05&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">END&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>SQLite: CSV</title><link>/sqlite-csv/</link><pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate><guid>/sqlite-csv/</guid><description>&lt;h2 id="zapytania-sql-na-danych-z-pliku-csv">Zapytania SQL na danych z pliku CSV&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://til.simonwillison.net/sqlite/one-line-csv-operations" target="_blank" rel="noopener"
+>https://til.simonwillison.net/sqlite/one-line-csv-operations&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Electron: creating portable windows application</title><link>/electron-creating-portable-windows-application/</link><pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate><guid>/electron-creating-portable-windows-application/</guid><description>&lt;h2 id="how-to-create-a-portable-windows-application-without-an-installer-from-an-electron-project">How to create a portable windows application without an installer from an electron project:&lt;/h2>
+&lt;p>Clone the electron-quick-start repo:
+git clone &lt;a class="link" href="https://github.com/electron/electron-quick-start" target="_blank" rel="noopener"
+>https://github.com/electron/electron-quick-start&lt;/a>
+yarn
+Make your application - probably edit main.js to navigate to some URL
+yarn add electron-packager
+Edit package.json - update the &amp;rsquo;name&amp;rsquo; and add a new script &amp;lsquo;packager&amp;rsquo;:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;my-app-name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="err">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;start&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;electron .&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;packager&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;electron-packager ./ --platform=win32&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&amp;rsquo;npm start&amp;rsquo; will bring up the application
+&amp;rsquo;npm run packager&amp;rsquo; will package the app for windows. You will see a new directory &amp;lsquo;my-app-name-win32-x64&amp;rsquo; in the top directory of the project, with a my-app-name.exe&lt;/p></description></item><item><title>GIT: notatki</title><link>/git-notatki/</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>/git-notatki/</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post GIT: notatki" />&lt;h2 id="git-push-do-repozytorium-non-bare">git push do repozytorium non-bare&lt;/h2>
+&lt;p>Set receive.denyCurrentBranch to ignore, warn or updateInstead (according to your needs) in the remote non-bare repository to allow pushing the current branch.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># Config receive.denyCurrentBranch to ignore in the remote repository
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># The configuration is applied to only this respository.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git config receive.denyCurrentBranch ignore
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># Config receive.denyCurrentBranch to updateInstead in the remote repository
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git config receive.denyCurrentBranch updateInstead
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/php-test-po%C5%82%C4%85czenia-z-mssql/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/php-test-po%C5%82%C4%85czenia-z-mssql/</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$serverName&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;127.0.0.1,1433&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">//serverNameinstanceName, portNumber (default is 1433)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nv">$connectionInfo&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s2">&amp;#34;Database&amp;#34;&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span>&lt;span class="s2">&amp;#34;demo&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;UID&amp;#34;&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span>&lt;span class="s2">&amp;#34;sa&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;PWD&amp;#34;&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span>&lt;span class="s2">&amp;#34;pass&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$conn&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">sqlsrv_connect&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$serverName&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$connectionInfo&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$conn&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">echo&lt;/span> &lt;span class="s2">&amp;#34;Connection established.&amp;lt;br /&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;span class="k">else&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">echo&lt;/span> &lt;span class="s2">&amp;#34;Connection could not be established.&amp;lt;br /&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">die&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">print_r&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">sqlsrv_errors&lt;/span>&lt;span class="p">(),&lt;/span> &lt;span class="k">true&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Git: linki</title><link>/git-linki/</link><pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate><guid>/git-linki/</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post Git: linki" />&lt;h1 id="linki-do-materiałów-dotyczących-git-a">Linki do materiałów dotyczących git-a&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://stormit.pl/git/" target="_blank" rel="noopener"
+>https://stormit.pl/git/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>MSSQL - rozmiar tabel</title><link>/mssql-rozmiar-tabel/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/mssql-rozmiar-tabel/</guid><description>&lt;p>MSSQL - rozmiar tabel&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">SELECT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> DF.name as [Plik]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --,[File_Location] = DF.PHYSICAL_NAME
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,[Rozmiar (MB)] = CONVERT(DECIMAL(10,2),DF.SIZE/128.0)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,[Uzyte (MB)] = CONVERT(DECIMAL(10,2),DF.SIZE/128.0 - ((SIZE/128.0) - CAST(FILEPROPERTY(DF.NAME, &amp;#39;SPACEUSED&amp;#39;) AS INT)/128.0))
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,[Wolne (MB)] = CONVERT(DECIMAL(10,2),DF.SIZE/128.0 - CAST(FILEPROPERTY(DF.NAME, &amp;#39;SPACEUSED&amp;#39;) AS INT)/128.0)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,[Wolne (%)] = CONVERT(DECIMAL(10,2),((DF.SIZE/128.0 - CAST(FILEPROPERTY(DF.NAME, &amp;#39;SPACEUSED&amp;#39;) AS INT)/128.0)/(DF.SIZE/128.0))*100)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">FROM sys.database_files DF
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">LEFT JOIN sys.filegroups FG
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ON DF.data_space_id = FG.data_space_id
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">SELECT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-- s.Name AS SchemaName,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">t.Name AS [Tabela],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">p.rows AS [Ilość rekordów],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CAST(ROUND((SUM(a.total_pages) / 128.00), 2) AS NUMERIC(36, 2)) AS [Rozmiar (MB)],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CAST(ROUND((SUM(a.used_pages) / 128.00), 2) AS NUMERIC(36, 2)) AS [Uzyte (MB)],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CAST(ROUND((SUM(a.total_pages) - SUM(a.used_pages)) / 128.00, 2) AS NUMERIC(36, 2)) AS [Wolne (MB)]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">FROM sys.tables t
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INNER JOIN sys.indexes i ON t.OBJECT_ID = i.object_id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INNER JOIN sys.partitions p ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INNER JOIN sys.allocation_units a ON p.partition_id = a.container_id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GROUP BY t.Name, s.Name, p.Rows
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ORDER BY [Rozmiar (MB)] DESC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GO
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Nmap: podstawy</title><link>/nmap-podstawy/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/nmap-podstawy/</guid><description>&lt;p>Skanowanie sieci:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">nmap -sn 192.168.88.0/24
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Skanowanie portow TCP:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">nmap -sT 192.168.88.0/24
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Skanowanie portow UDP:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">nmap -sU 192.168.88.0/24
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PC-Market: błąd drukowania EPrinter Printer is not currently printing</title><link>/pc-market-b%C5%82%C4%85d-drukowania-eprinter-printer-is-not-currently-printing/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-market-b%C5%82%C4%85d-drukowania-eprinter-printer-is-not-currently-printing/</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: błąd drukowania EPrinter Printer is not currently printing" />&lt;p>Błąd drukowania - EPrinter Printer is not currently printing
+Trzeba odinstalować aktualizacje:&lt;/p>
+&lt;ul>
+&lt;li>KB3177725 - dla Windows 7, 8&lt;/li>
+&lt;li>KB3176493 - dla Windows 10&lt;/li>
+&lt;/ul></description></item><item><title>PC-Market: parametry wiersza poleceń, automatyczne logowanie</title><link>/pc-market-parametry-wiersza-polece%C5%84-automatyczne-logowanie/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-market-parametry-wiersza-polece%C5%84-automatyczne-logowanie/</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: parametry wiersza poleceń, automatyczne logowanie" />&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">PCMWin.exe -cpar&amp;#34;Baza=pcmarket;Id=ADMIN;Haslo=admin&amp;#34; -NoCparErr
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PcmEDI.exe -cpar&amp;#34;Baza=pcmarket;Id=ADMIN;Haslo=admin&amp;#34; -NoCparErr -silent
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PC-Market: włączenie logowania komunikacji z drukarką fiskalną</title><link>/pc-market-w%C5%82%C4%85czenie-logowania-komunikacji-z-drukark%C4%85-fiskaln%C4%85/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-market-w%C5%82%C4%85czenie-logowania-komunikacji-z-drukark%C4%85-fiskaln%C4%85/</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: włączenie logowania komunikacji z drukarką fiskalną" />&lt;p>Utworzenie pliku &lt;code>df.dbg&lt;/code> w katalogu programu powoduje że zapisywana jest tam cała komunikacja z drukarką fiskalną.&lt;/p></description></item><item><title>PC-Market: zmiana kodów krótkich na wagowe</title><link>/pc-market-zmiana-kod%C3%B3w-kr%C3%B3tkich-na-wagowe/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-market-zmiana-kod%C3%B3w-kr%C3%B3tkich-na-wagowe/</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: zmiana kodów krótkich na wagowe" />&lt;p>PC-Market: zmiana kodów krótkich na wagowe&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="k">Select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Towar&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">kod&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">like&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;29%&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">Select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">getdate&lt;/span>&lt;span class="p">(),&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;29&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">right&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;0000&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">kod&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;???????&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Towar&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">JMid&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">AND&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">kod&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;lt;=&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">order&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">by&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">kod&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">UPDATE&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Towar&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">set&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">kod&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;29&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">right&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;0000&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">kod&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;???????&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">zmiana&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">getdate&lt;/span>&lt;span class="p">(),&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">zmianaistotna&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">getdate&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">JMid&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">AND&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">kod&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;lt;=&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- AND asid not in(134,132)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>lub tak:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="k">UPDATE&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">dbo&lt;/span>&lt;span class="p">].[&lt;/span>&lt;span class="n">Towar&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">SET&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">Kod&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">cast&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">290000&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">cast&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">kod&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">as&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">as&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">varchar&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;???????&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">WHERE&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Towid&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">GO&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">towar&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">towid&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">50&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PC-POS: zablokowana transmisja</title><link>/pc-pos-zablokowana-transmisja/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-pos-zablokowana-transmisja/</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-POS: zablokowana transmisja" />&lt;h2 id="problem">Problem&lt;/h2>
+&lt;p>Transmisja zatrzymuje się na jednym z dokumentów.&lt;/p>
+&lt;h2 id="rozwiązanie">Rozwiązanie&lt;/h2>
+&lt;ul>
+&lt;li>11234 - id dokumentu na którym staje łączność&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="k">Select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">top&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">externalid&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">receipt&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">receiptid&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">11230&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">UPDATE&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">receipt&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">set&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">isactive&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">receiptid&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">11234&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Play: Stały publiczny adres IP</title><link>/play-sta%C5%82y-publiczny-adres-ip/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/play-sta%C5%82y-publiczny-adres-ip/</guid><description>&lt;p>Internet Play APN dla usługi ze stałym publicznym adresem IP&lt;/p>
+&lt;p>APN: &lt;strong>ipnet&lt;/strong>&lt;/p>
+&lt;p>⚠️ Uwaga!
+jedna karta z taką usługą wymagała APN: pusty (trzeba skasować) 😲&lt;/p></description></item><item><title>PowerShell: linki</title><link>/powershell-linki/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-linki/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: linki" />&lt;h1 id="linki-z-materiałami-dotyczącymi-powershell-a">Linki z materiałami dotyczącymi powershell-a&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/pl-pl/training/browse/" target="_blank" rel="noopener"
+>https://learn.microsoft.com/pl-pl/training/browse/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>PowerShell: Lista użytkowników i czas ostatniego logowania</title><link>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Lista użytkowników i czas ostatniego logowania" />&lt;p>Lista użytkowników i czas ostatniego logowania:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">get-aduser -f * -pr lastlogondate|sort -property lastlogondate|ft samaccountname,lastlogondate -auto
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PowerShell: Reset uprawnień do wszystkich plików i katalogów</title><link>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Reset uprawnień do wszystkich plików i katalogów" />&lt;p>Reset uprawnień do wszystkich plików i katalogów:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">icacls * /q /c /t /reset
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PowerShell: Zmiana sieci publicznej na prywatną</title><link>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Zmiana sieci publicznej na prywatną" />&lt;p>Zmiana sieci publicznej na prywatną&lt;/p>
+&lt;p>&lt;code>Ethernet&lt;/code> to nazwa połączenia sieciowego.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Set-NetConnectionProfile -InterfaceAlias &amp;#34;Ethernet&amp;#34; -NetworkCategory Private
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Przekierowanie połączeń PlusGSM</title><link>/przekierowanie-po%C5%82%C4%85cze%C5%84-plusgsm/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/przekierowanie-po%C5%82%C4%85cze%C5%84-plusgsm/</guid><description>&lt;p>Przekierowanie połączeń PlusGSM (możliwe że inni operatorzy tak samo)&lt;/p>
+&lt;h2 id="włączenie">Włączenie&lt;/h2>
+&lt;ul>
+&lt;li>&lt;kbd>*&lt;em>21&lt;/em>&lt;/kbd>+48xxxxxxxxx&lt;kbd>#&lt;/kbd> - włączenie dla wszystkich połączeń&lt;/li>
+&lt;li>&lt;kbd>*&lt;em>61&lt;/em>&lt;/kbd>+48xxxxxxxxx&lt;kbd>#&lt;/kbd> - włączenie gdy nie odbierasz połączenia&lt;/li>
+&lt;li>&lt;kbd>*&lt;em>62&lt;/em>&lt;/kbd>+48xxxxxxxxx&lt;kbd>#&lt;/kbd> - włączenie gdy numer jest nieosiągalny&lt;/li>
+&lt;li>&lt;kbd>*&lt;em>67&lt;/em>&lt;/kbd>+48xxxxxxxxx&lt;kbd>#&lt;/kbd> - włączenie gdy numer jest zajęty&lt;/li>
+&lt;/ul>
+&lt;h2 id="wyłączenie">Wyłączenie&lt;/h2>
+&lt;ul>
+&lt;li>&lt;kbd>##21#&lt;/kbd> - wyłączenie dla wszystkich przekierowań&lt;/li>
+&lt;li>&lt;kbd>##61#&lt;/kbd> - wyłączenie przekierowania gdy nie odbierasz&lt;/li>
+&lt;li>&lt;kbd>##62#&lt;/kbd> - wyłączenie przekierowania gdy numer nieosiągalny&lt;/li>
+&lt;li>&lt;kbd>##67#&lt;/kbd> - wyłączenie przekierowania gdy numer zajęty&lt;/li>
+&lt;/ul></description></item><item><title>VSCode: mssql plugin - konfiguracja połączenia</title><link>/vscode-mssql-plugin-konfiguracja-po%C5%82%C4%85czenia/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/vscode-mssql-plugin-konfiguracja-po%C5%82%C4%85czenia/</guid><description>&lt;p>&lt;code>Preferences: Open Settings (JSON)&lt;/code>&lt;/p>
+&lt;p>a w nim konfiguracja połączeń MSSQL:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;mssql.connections&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;server&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;127.0.0.1,52019&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;database&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;authenticationType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;SqlLogin&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;user&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;sa&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;password&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;emptyPasswordInput&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;savePassword&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;profileName&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;SQL2019&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>&lt;span class="err">,&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Windows 10: błędy touchpada i zrzuty log-a</title><link>/windows-10-b%C5%82%C4%99dy-touchpada-i-zrzuty-log-a/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-10-b%C5%82%C4%99dy-touchpada-i-zrzuty-log-a/</guid><description>&lt;p>Błędy Touchpada i zrzuty log - wyłączenie&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">reg add HKEY_LOCAL_MACHINESYSTEMCurrentControlSetservicesSynTPParametersDebug /v DumpKernel /d 00000000 /t REG_DWORD /f
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Windows: Update error 0x80070643</title><link>/windows-update-error-0x80070643/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-update-error-0x80070643/</guid><description>&lt;h2 id="windows-update-error-0x80070643">Windows Update error 0x80070643&lt;/h2>
+&lt;p>Here’s what you can do to fix the issue.&lt;/p>
+&lt;p>Rename the SoftwareDistribution folder&lt;/p>
+&lt;p>To solve this, it is advisable to rename the SoftwareDistribution folder. To rename the Software Distribution folder, open an elevated command prompt windows, type the following commands one after the other, and hit Enter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">net stop wuauserv
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net stop bits
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rename c:windowsSoftwareDistribution SoftwareDistribution.bak
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net start wuauserv
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net start bits
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Next clear the contents of the Catroot2 folder.
+Clear Catroot2 folder contents&lt;/p>
+&lt;p>Catroot and Catroot2 are the some of the important Windows OS folders which are required while Windows Updates process. So, if you are facing the problem while updating your Windows and receiving error message – 0x80070643, then reset the Catroot2 folder.&lt;/p>
+&lt;p>To reset the catroot2 folder do this:
+Open an elevated Command Prompt, type the following command one after the other and hit Enter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">net stop cryptsvc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">md %systemroot%system32catroot2.old
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">xcopy %systemroot%system32catroot2 %systemroot%system32catroot2.old /s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Next, delete all the contents of the catroot2 folder.&lt;/p>
+&lt;p>Having done this, in the CMD windows, type the following and hit Enter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">net start cryptsvc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Your catroot folder will be reset, once you start Windows Update again.&lt;/p>
+&lt;hr>
+&lt;p>svchost.exe i duże użycie procesora:
+Zatrzymaj usługę Windows Update i usuń folder c:windowssoftware distribution
+po restarcie powstanie nowy&lt;/p>
+&lt;p>3 things you should do if Window is unable to install the driver &amp;hellip;
+This problem is the result of the Windows Update agent file (Wups2.dll) not being registered correctly. To resolve the problem, register the Windows Update files. Or, you can download and install the Windows Update agent. By ensuring that the Windows Update file is registered correctly, you will also be ensuring that any additional keys are also registered. To register the Windows Update files, create a file named register.bat and save it to the desktop. For Windows XP, Windows Server 2003, or Windows 2000, the .bat file should contain the following:&lt;/p>
+&lt;ol>
+&lt;li>REGSVR32 WUPS2.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUPS.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUAUENG.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUAPI.DLL /S&lt;/li>
+&lt;li>REGSVR32 MUCLTUI.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUCLTUI.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUWEB.DLL /S&lt;/li>
+&lt;li>REGSVR32 MUWEB.DLL /S&lt;/li>
+&lt;li>REGSVR32 QMGR.DLL /S&lt;/li>
+&lt;/ol>
+&lt;p>REGSVR32 QMGRPRXY.DLL /S&lt;/p>
+&lt;p>If you are running Vista or Windows Server 2008, the .bat file should contain the following:&lt;/p>
+&lt;ol>
+&lt;li>REGSVR32 WUPS2.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUPS.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUAUENG.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUAPI.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUCLTUX.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUWEBV.DLL /S&lt;/li>
+&lt;li>REGSVR32 JSCRIPT.DLL /S&lt;/li>
+&lt;/ol>
+&lt;p>REGSVR32 MSXML3.DLL /S&lt;/p></description></item><item><title>Windows: Wymuszenie zmiany haseł na komputerze</title><link>/windows-wymuszenie-zmiany-hase%C5%82-na-komputerze/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-wymuszenie-zmiany-hase%C5%82-na-komputerze/</guid><description>&lt;p>Poniższe komendy należy wykonać w wierszu poleceń uruchomionym jako Administrator&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">net accounts /MAXPWAGE:30
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net accounts /MINPWLEN:8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net accounts /UNIQUEPW:12
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wmic path Win32_UserAccount set PasswordExpires=True
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>WinSCP synchronizacja katalogów</title><link>/winscp-synchronizacja-katalog%C3%B3w/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/winscp-synchronizacja-katalog%C3%B3w/</guid><description>&lt;p>Synchronizacja lokalnego katalogu z serwerem ftp przy użyciu WinSCP, z pominięciem katalogu &lt;code>.git&lt;/code>&lt;/p>
+&lt;p>Tworze sobie 2 pliki&lt;/p>
+&lt;p>make.cmd:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">WinSCP.com /script=make.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>make.txt:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">option batch abort
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">option confirm off
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">open ftp://login:haslo@ftp.host.pl
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">synchronize remote &amp;#34;.folder&amp;#34; &amp;#34;/folder/na/ftp/&amp;#34; -filemask=&amp;#34;|.git;*/input/*;*/output/*&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">close
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">exit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>MSSQL - zmiana hasła użytkownika sa</title><link>/mssql-zmiana-has%C5%82a-u%C5%BCytkownika-sa/</link><pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate><guid>/mssql-zmiana-has%C5%82a-u%C5%BCytkownika-sa/</guid><description>&lt;p>Jeśli nie znam hasła użytkownika &lt;code>sa&lt;/code>, ale mam dostęp do konta windows z uprawnieniami do serwera SQL (najczęściej użytkownik który instalował instancję SQL) możemy zmienić hasło użytkownika &lt;code>sa&lt;/code>.&lt;/p>
+&lt;p>W tym celu łączę się z serwerem SQL:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">osql -S SERWERSQL –E
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>po połączeniu zmieniamy hasło:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="n">sp_password&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;Wapro3000&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="err">’&lt;/span>&lt;span class="n">noweHasl0&lt;/span>&lt;span class="err">’&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">go&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- lub tak:
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">ALTER&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">LOGIN&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sa&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">WITH&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">PASSWORD&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;noweHasl0&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">go&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>MSSQL: Odbudowa indeksów</title><link>/mssql-odbudowa-indeks%C3%B3w/</link><pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate><guid>/mssql-odbudowa-indeks%C3%B3w/</guid><description>&lt;p>Odbudowa indeksów dla wszystkich tabel w bazie danych:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">GO
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">EXEC sp_MSforeachtable @command1=&amp;#34;print &amp;#39;?&amp;#39; DBCC DBREINDEX (&amp;#39;?&amp;#39;, &amp;#39; &amp;#39;, 80)&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GO
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Przekierowanie numeru stacjonarnego</title><link>/przekierowanie-numeru-stacjonarnego/</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><guid>/przekierowanie-numeru-stacjonarnego/</guid><description>&lt;p>Jak włączyć przekierowanie numeru stacjonarnego?
+To bardzo proste.&lt;/p>
+&lt;h2 id="włączenie-przekierowania">Włączenie przekierowania&lt;/h2>
+&lt;ul>
+&lt;li>Podnosimy słuchawkę&lt;/li>
+&lt;li>Wybieramy &lt;kbd>*&lt;/kbd> &lt;kbd>2&lt;/kbd> &lt;kbd>1&lt;/kbd> &lt;kbd>*&lt;/kbd> numer_na_ktory_chcemy_przekierowac &lt;kbd>#&lt;/kbd>&lt;/li>
+&lt;li>W słuchawce komunikat o przyjęciu zlecenia&lt;/li>
+&lt;li>Można się rozłączyć&lt;/li>
+&lt;/ul>
+&lt;h2 id="wyłączenie-przekierowania">Wyłączenie przekierowania&lt;/h2>
+&lt;ul>
+&lt;li>Podnosimy słuchawkę&lt;/li>
+&lt;li>Wybieramy &lt;kbd>#&lt;/kbd> &lt;kbd>2&lt;/kbd> &lt;kbd>1&lt;/kbd> &lt;kbd>#&lt;/kbd>&lt;/li>
+&lt;li>W słuchawce komunikat o przyjęciu zlecenia&lt;/li>
+&lt;li>Można się rozłączyć&lt;/li>
+&lt;/ul></description></item></channel></rss>

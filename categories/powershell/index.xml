@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PowerShell on urbanowski.info</title><link>/categories/powershell/</link><description>Recent content in PowerShell on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>PowerShell: linki</title><link>/powershell-linki/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-linki/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: linki" />&lt;h1 id="linki-z-materiałami-dotyczącymi-powershell-a">Linki z materiałami dotyczącymi powershell-a&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/pl-pl/training/browse/" target="_blank" rel="noopener"
+>https://learn.microsoft.com/pl-pl/training/browse/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>PowerShell: Lista użytkowników i czas ostatniego logowania</title><link>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Lista użytkowników i czas ostatniego logowania" />&lt;p>Lista użytkowników i czas ostatniego logowania:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">get-aduser -f * -pr lastlogondate|sort -property lastlogondate|ft samaccountname,lastlogondate -auto
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PowerShell: Reset uprawnień do wszystkich plików i katalogów</title><link>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Reset uprawnień do wszystkich plików i katalogów" />&lt;p>Reset uprawnień do wszystkich plików i katalogów:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">icacls * /q /c /t /reset
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PowerShell: Zmiana sieci publicznej na prywatną</title><link>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Zmiana sieci publicznej na prywatną" />&lt;p>Zmiana sieci publicznej na prywatną&lt;/p>
+&lt;p>&lt;code>Ethernet&lt;/code> to nazwa połączenia sieciowego.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Set-NetConnectionProfile -InterfaceAlias &amp;#34;Ethernet&amp;#34; -NetworkCategory Private
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

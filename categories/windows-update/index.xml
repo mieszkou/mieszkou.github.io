@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows update on urbanowski.info</title><link>/categories/windows-update/</link><description>Recent content in Windows update on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/windows-update/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows: Update error 0x80070643</title><link>/windows-update-error-0x80070643/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-update-error-0x80070643/</guid><description>&lt;h2 id="windows-update-error-0x80070643">Windows Update error 0x80070643&lt;/h2>
+&lt;p>Here’s what you can do to fix the issue.&lt;/p>
+&lt;p>Rename the SoftwareDistribution folder&lt;/p>
+&lt;p>To solve this, it is advisable to rename the SoftwareDistribution folder. To rename the Software Distribution folder, open an elevated command prompt windows, type the following commands one after the other, and hit Enter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">net stop wuauserv
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net stop bits
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rename c:windowsSoftwareDistribution SoftwareDistribution.bak
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net start wuauserv
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net start bits
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Next clear the contents of the Catroot2 folder.
+Clear Catroot2 folder contents&lt;/p>
+&lt;p>Catroot and Catroot2 are the some of the important Windows OS folders which are required while Windows Updates process. So, if you are facing the problem while updating your Windows and receiving error message – 0x80070643, then reset the Catroot2 folder.&lt;/p>
+&lt;p>To reset the catroot2 folder do this:
+Open an elevated Command Prompt, type the following command one after the other and hit Enter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">net stop cryptsvc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">md %systemroot%system32catroot2.old
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">xcopy %systemroot%system32catroot2 %systemroot%system32catroot2.old /s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Next, delete all the contents of the catroot2 folder.&lt;/p>
+&lt;p>Having done this, in the CMD windows, type the following and hit Enter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">net start cryptsvc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Your catroot folder will be reset, once you start Windows Update again.&lt;/p>
+&lt;hr>
+&lt;p>svchost.exe i duże użycie procesora:
+Zatrzymaj usługę Windows Update i usuń folder c:windowssoftware distribution
+po restarcie powstanie nowy&lt;/p>
+&lt;p>3 things you should do if Window is unable to install the driver &amp;hellip;
+This problem is the result of the Windows Update agent file (Wups2.dll) not being registered correctly. To resolve the problem, register the Windows Update files. Or, you can download and install the Windows Update agent. By ensuring that the Windows Update file is registered correctly, you will also be ensuring that any additional keys are also registered. To register the Windows Update files, create a file named register.bat and save it to the desktop. For Windows XP, Windows Server 2003, or Windows 2000, the .bat file should contain the following:&lt;/p>
+&lt;ol>
+&lt;li>REGSVR32 WUPS2.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUPS.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUAUENG.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUAPI.DLL /S&lt;/li>
+&lt;li>REGSVR32 MUCLTUI.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUCLTUI.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUWEB.DLL /S&lt;/li>
+&lt;li>REGSVR32 MUWEB.DLL /S&lt;/li>
+&lt;li>REGSVR32 QMGR.DLL /S&lt;/li>
+&lt;/ol>
+&lt;p>REGSVR32 QMGRPRXY.DLL /S&lt;/p>
+&lt;p>If you are running Vista or Windows Server 2008, the .bat file should contain the following:&lt;/p>
+&lt;ol>
+&lt;li>REGSVR32 WUPS2.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUPS.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUAUENG.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUAPI.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUCLTUX.DLL /S&lt;/li>
+&lt;li>REGSVR32 WUWEBV.DLL /S&lt;/li>
+&lt;li>REGSVR32 JSCRIPT.DLL /S&lt;/li>
+&lt;/ol>
+&lt;p>REGSVR32 MSXML3.DLL /S&lt;/p></description></item></channel></rss>

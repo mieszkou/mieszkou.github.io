@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>php on urbanowski.info</title><link>/tags/php/</link><description>Recent content in php on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/php/index.xml" rel="self" type="application/rss+xml"/><item><title>PHP: test połączenia z MSSQL</title><link>/php-test-po%C5%82%C4%85czenia-z-mssql/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/php-test-po%C5%82%C4%85czenia-z-mssql/</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$serverName&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;127.0.0.1,1433&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">//serverNameinstanceName, portNumber (default is 1433)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nv">$connectionInfo&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s2">&amp;#34;Database&amp;#34;&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span>&lt;span class="s2">&amp;#34;demo&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;UID&amp;#34;&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span>&lt;span class="s2">&amp;#34;sa&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;PWD&amp;#34;&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span>&lt;span class="s2">&amp;#34;pass&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$conn&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">sqlsrv_connect&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$serverName&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$connectionInfo&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$conn&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">echo&lt;/span> &lt;span class="s2">&amp;#34;Connection established.&amp;lt;br /&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;span class="k">else&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">echo&lt;/span> &lt;span class="s2">&amp;#34;Connection could not be established.&amp;lt;br /&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">die&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">print_r&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">sqlsrv_errors&lt;/span>&lt;span class="p">(),&lt;/span> &lt;span class="k">true&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

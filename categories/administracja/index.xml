@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Administracja on urbanowski.info</title><link>/categories/administracja/</link><description>Recent content in Administracja on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/administracja/index.xml" rel="self" type="application/rss+xml"/><item><title>MSSQL - rozmiar tabel</title><link>/mssql-rozmiar-tabel/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/mssql-rozmiar-tabel/</guid><description>&lt;p>MSSQL - rozmiar tabel&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">SELECT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> DF.name as [Plik]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --,[File_Location] = DF.PHYSICAL_NAME
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,[Rozmiar (MB)] = CONVERT(DECIMAL(10,2),DF.SIZE/128.0)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,[Uzyte (MB)] = CONVERT(DECIMAL(10,2),DF.SIZE/128.0 - ((SIZE/128.0) - CAST(FILEPROPERTY(DF.NAME, &amp;#39;SPACEUSED&amp;#39;) AS INT)/128.0))
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,[Wolne (MB)] = CONVERT(DECIMAL(10,2),DF.SIZE/128.0 - CAST(FILEPROPERTY(DF.NAME, &amp;#39;SPACEUSED&amp;#39;) AS INT)/128.0)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,[Wolne (%)] = CONVERT(DECIMAL(10,2),((DF.SIZE/128.0 - CAST(FILEPROPERTY(DF.NAME, &amp;#39;SPACEUSED&amp;#39;) AS INT)/128.0)/(DF.SIZE/128.0))*100)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">FROM sys.database_files DF
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">LEFT JOIN sys.filegroups FG
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ON DF.data_space_id = FG.data_space_id
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">SELECT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-- s.Name AS SchemaName,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">t.Name AS [Tabela],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">p.rows AS [Ilość rekordów],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CAST(ROUND((SUM(a.total_pages) / 128.00), 2) AS NUMERIC(36, 2)) AS [Rozmiar (MB)],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CAST(ROUND((SUM(a.used_pages) / 128.00), 2) AS NUMERIC(36, 2)) AS [Uzyte (MB)],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CAST(ROUND((SUM(a.total_pages) - SUM(a.used_pages)) / 128.00, 2) AS NUMERIC(36, 2)) AS [Wolne (MB)]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">FROM sys.tables t
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INNER JOIN sys.indexes i ON t.OBJECT_ID = i.object_id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INNER JOIN sys.partitions p ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INNER JOIN sys.allocation_units a ON p.partition_id = a.container_id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GROUP BY t.Name, s.Name, p.Rows
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ORDER BY [Rozmiar (MB)] DESC
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GO
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Windows 10: błędy touchpada i zrzuty log-a</title><link>/windows-10-b%C5%82%C4%99dy-touchpada-i-zrzuty-log-a/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-10-b%C5%82%C4%99dy-touchpada-i-zrzuty-log-a/</guid><description>&lt;p>Błędy Touchpada i zrzuty log - wyłączenie&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">reg add HKEY_LOCAL_MACHINESYSTEMCurrentControlSetservicesSynTPParametersDebug /v DumpKernel /d 00000000 /t REG_DWORD /f
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Windows: Wymuszenie zmiany haseł na komputerze</title><link>/windows-wymuszenie-zmiany-hase%C5%82-na-komputerze/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-wymuszenie-zmiany-hase%C5%82-na-komputerze/</guid><description>&lt;p>Poniższe komendy należy wykonać w wierszu poleceń uruchomionym jako Administrator&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">net accounts /MAXPWAGE:30
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net accounts /MINPWLEN:8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net accounts /UNIQUEPW:12
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wmic path Win32_UserAccount set PasswordExpires=True
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>MSSQL - zmiana hasła użytkownika sa</title><link>/mssql-zmiana-has%C5%82a-u%C5%BCytkownika-sa/</link><pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate><guid>/mssql-zmiana-has%C5%82a-u%C5%BCytkownika-sa/</guid><description>&lt;p>Jeśli nie znam hasła użytkownika &lt;code>sa&lt;/code>, ale mam dostęp do konta windows z uprawnieniami do serwera SQL (najczęściej użytkownik który instalował instancję SQL) możemy zmienić hasło użytkownika &lt;code>sa&lt;/code>.&lt;/p>
+&lt;p>W tym celu łączę się z serwerem SQL:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">osql -S SERWERSQL –E
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>po połączeniu zmieniamy hasło:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="n">sp_password&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;Wapro3000&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="err">’&lt;/span>&lt;span class="n">noweHasl0&lt;/span>&lt;span class="err">’&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">go&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- lub tak:
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">ALTER&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">LOGIN&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sa&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">WITH&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">PASSWORD&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;noweHasl0&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">go&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>MSSQL: Odbudowa indeksów</title><link>/mssql-odbudowa-indeks%C3%B3w/</link><pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate><guid>/mssql-odbudowa-indeks%C3%B3w/</guid><description>&lt;p>Odbudowa indeksów dla wszystkich tabel w bazie danych:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">GO
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">EXEC sp_MSforeachtable @command1=&amp;#34;print &amp;#39;?&amp;#39; DBCC DBREINDEX (&amp;#39;?&amp;#39;, &amp;#39; &amp;#39;, 80)&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GO
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

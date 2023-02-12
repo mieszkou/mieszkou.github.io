@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sqllite on urbanowski.info</title><link>/tags/sqllite/</link><description>Recent content in sqllite on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Tue, 21 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sqllite/index.xml" rel="self" type="application/rss+xml"/><item><title>SQLite: CSV</title><link>/sqlite-csv/</link><pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate><guid>/sqlite-csv/</guid><description>&lt;h2 id="zapytania-sql-na-danych-z-pliku-csv">Zapytania SQL na danych z pliku CSV&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://til.simonwillison.net/sqlite/one-line-csv-operations" target="_blank" rel="noopener"
+>https://til.simonwillison.net/sqlite/one-line-csv-operations&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
