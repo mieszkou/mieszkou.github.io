@@ -8,7 +8,7 @@ paginate: 10
 #   posts: /:title/
 
 # Change it to your Disqus shortname before using
-disqusShortname: https-urbanowski-info.disqus.com
+disqusShortname: https-urbanowski-info
 
 # GA Tracking ID
 googleAnalytics: G-X7XELVYBWS
