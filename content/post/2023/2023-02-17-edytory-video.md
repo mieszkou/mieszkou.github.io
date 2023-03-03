@@ -15,9 +15,11 @@ categories:
     - Programy których używam
 ---
 
+> tu są testy wstawiania obrazów w pliku `md` dla Hugo. Można skrolować dalej....
+
 - 🎥 https://coverr.co - darmowe klipy video
 - 🎥 https://www.capcut.com/editor - edytor video (niestety od właściciela tictoc-a)
 - 🎥 https://fxhome.com/ - edytor video
 - 🎥 https://www.shotcut.org/ - edytor video
 
-![](2023-02-17-11-45-50.png)
+![](/post/2023/2023-02-17-11-45-50.png)

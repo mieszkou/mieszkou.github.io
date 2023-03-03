@@ -1,6 +1,6 @@
 ---
 title: "SQL Server Config manager error: Cannot connect to WMI provider"
-description: 
+description: "SQL Server Config manager error: Cannot connect to WMI provider"
 date: 2023-03-03
 image: 
 hidden: false
@@ -21,7 +21,7 @@ Run Cmd as Administrator and execute these commands:
 
 First go to SQL Shared folder according to your sql version:
 
-```
+```bash
 SQL 2008: C:\Program Files (x86)\Microsoft SQL Server\100\Shared\
 SQL 2012: C:\Program Files (x86)\Microsoft SQL Server\110\Shared\
 SQL 2014: C:\Program Files (x86)\Microsoft SQL Server\120\Shared\
