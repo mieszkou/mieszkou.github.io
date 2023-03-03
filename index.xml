@@ -9,11 +9,11 @@
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">SQL 2008: C:\Program Files (x86)\Microsoft SQL Server\100\Shared\
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">SQL 2012: C:\Program Files (x86)\Microsoft SQL Server\110\Shared\
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">SQL 2014: C:\Program Files (x86)\Microsoft SQL Server\120\Shared\
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">SQL 2017: C:\Program Files (x86)\Microsoft SQL Server\140\Shared\ -------&amp;gt; My version is 2017 SQL 2019: C:\Program Files (x86)\Microsoft SQL Server\150\Shared\
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">SQL 2008: C:&lt;span class="se">\P&lt;/span>rogram Files &lt;span class="o">(&lt;/span>x86&lt;span class="o">)&lt;/span>&lt;span class="se">\M&lt;/span>icrosoft SQL Server&lt;span class="se">\1&lt;/span>00&lt;span class="se">\S&lt;/span>hared&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>SQL 2012: C:&lt;span class="se">\P&lt;/span>rogram Files &lt;span class="o">(&lt;/span>x86&lt;span class="o">)&lt;/span>&lt;span class="se">\M&lt;/span>icrosoft SQL Server&lt;span class="se">\1&lt;/span>10&lt;span class="se">\S&lt;/span>hared&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>SQL 2014: C:&lt;span class="se">\P&lt;/span>rogram Files &lt;span class="o">(&lt;/span>x86&lt;span class="o">)&lt;/span>&lt;span class="se">\M&lt;/span>icrosoft SQL Server&lt;span class="se">\1&lt;/span>20&lt;span class="se">\S&lt;/span>hared&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>SQL 2017: C:&lt;span class="se">\P&lt;/span>rogram Files &lt;span class="o">(&lt;/span>x86&lt;span class="o">)&lt;/span>&lt;span class="se">\M&lt;/span>icrosoft SQL Server&lt;span class="se">\1&lt;/span>40&lt;span class="se">\S&lt;/span>hared&lt;span class="se">\ &lt;/span>-------&amp;gt; My version is &lt;span class="m">2017&lt;/span> SQL 2019: C:&lt;span class="se">\P&lt;/span>rogram Files &lt;span class="o">(&lt;/span>x86&lt;span class="o">)&lt;/span>&lt;span class="se">\M&lt;/span>icrosoft SQL Server&lt;span class="se">\1&lt;/span>50&lt;span class="se">\S&lt;/span>hared&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Find more versions here&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -38,7 +38,10 @@
 &lt;p>Here is more explanation: &lt;a class="link" href="https://learn.microsoft.com/en-us/windows/desktop/wmisdk/mofcomp" target="_blank" rel="noopener"
 >https://learn.microsoft.com/en-us/windows/desktop/wmisdk/mofcomp&lt;/a>&lt;/p>
 &lt;p>src: &lt;a class="link" href="https://stackoverflow.com/questions/44753745/sql-server-config-manager-error-cannot-connect-to-wmi-provider" target="_blank" rel="noopener"
->https://stackoverflow.com/questions/44753745/sql-server-config-manager-error-cannot-connect-to-wmi-provider&lt;/a>&lt;/p></description></item><item><title>Edytory video, montaż video</title><link>/edytory-video-monta%C5%BC-video/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>/edytory-video-monta%C5%BC-video/</guid><description>&lt;ul>
+>https://stackoverflow.com/questions/44753745/sql-server-config-manager-error-cannot-connect-to-wmi-provider&lt;/a>&lt;/p></description></item><item><title>Edytory video, montaż video</title><link>/edytory-video-monta%C5%BC-video/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>/edytory-video-monta%C5%BC-video/</guid><description>&lt;blockquote>
+&lt;p>tu są testy wstawiania obrazów w pliku &lt;code>md&lt;/code> dla Hugo. Można skrolować dalej&amp;hellip;.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
 &lt;li>🎥 &lt;a class="link" href="https://coverr.co" target="_blank" rel="noopener"
 >https://coverr.co&lt;/a> - darmowe klipy video&lt;/li>
 &lt;li>🎥 &lt;a class="link" href="https://www.capcut.com/editor" target="_blank" rel="noopener"
@@ -48,7 +51,7 @@
 &lt;li>🎥 &lt;a class="link" href="https://www.shotcut.org/" target="_blank" rel="noopener"
 >https://www.shotcut.org/&lt;/a> - edytor video&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="/2023-02-17-11-45-50.png"
+&lt;p>&lt;img src="/post/2023/2023-02-17-11-45-50.png"
 loading="lazy"
 >&lt;/p></description></item><item><title>SQL: pętla z opóźnieniem</title><link>/sql-p%C4%99tla-z-op%C3%B3%C5%BAnieniem/</link><pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate><guid>/sql-p%C4%99tla-z-op%C3%B3%C5%BAnieniem/</guid><description>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -141,7 +144,37 @@ Edit package.json - update the &amp;rsquo;name&amp;rsquo; and add a new script &
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git config receive.denyCurrentBranch updateInstead
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/php-test-po%C5%82%C4%85czenia-z-mssql/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/php-test-po%C5%82%C4%85czenia-z-mssql/</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
+&lt;/div></description></item><item><title>PHP, python: serwer WWW uruchamiany z wiersza poleceń</title><link>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84/</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84/</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP, python: serwer WWW uruchamiany z wiersza poleceń" />&lt;p>Jak szybko uruchomić serwer WWW z wiersza poleceń?&lt;/p>
+&lt;p>kilka sposobów:&lt;/p>
+&lt;h2 id="php">PHP&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">php -S 127.0.0.1:8080 -t ./www
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="python">python&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># python 3.x
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">python -m http.server 8080
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># python 2.X
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">python -m SimpleHTTPServer 8080
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="źródła">źródła&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://gist.github.com/willurd/5720255" target="_blank" rel="noopener"
+>https://gist.github.com/willurd/5720255&lt;/a> - Big list of http static server one-liners&lt;/li>
+&lt;/ul></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/php-test-po%C5%82%C4%85czenia-z-mssql/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/php-test-po%C5%82%C4%85czenia-z-mssql/</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
