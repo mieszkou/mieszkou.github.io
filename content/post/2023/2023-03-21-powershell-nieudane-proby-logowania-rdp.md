@@ -2,7 +2,7 @@
 title: "Powershell: nieudane próby logowania"
 description: "Podsumowane ilości nieudanych prób logowania w kolejnych dniach"
 date: 2023-03-21
-image: 
+image: /img/2023-02-12-23-33-57.png
 hidden: false
 comments: true
 draft: false
