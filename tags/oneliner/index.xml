@@ -7,7 +7,27 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Get-EventLog&lt;/span> &lt;span class="n">-LogName&lt;/span> &lt;span class="n">Security&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Where-Object&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">EventID&lt;/span> &lt;span class="o">-eq&lt;/span> &lt;span class="mf">4625&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Group-Object&lt;/span> &lt;span class="n">-Property&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">TimeGenerated&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">ToShortDateString&lt;/span>&lt;span class="p">()}&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Select-Object&lt;/span> &lt;span class="n">Name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Count&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Powyższe polecenie pobiera dziennik zdarzeń bezpieczeństwa, filtruje tylko te wpisy, które mają identyfikator zdarzenia 4625 (co odpowiada nieudanej próbie logowania), grupuje je według daty (za pomocą właściwości TimeGenerated), a następnie zwraca nazwę grupy (czyli datę) oraz liczbę wpisów w grupie (czyli liczbę nieudanych prób logowania w danym dniu).&lt;/p></description></item><item><title>PHP, python: serwer WWW uruchamiany z wiersza poleceń</title><link>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84/</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84/</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP, python: serwer WWW uruchamiany z wiersza poleceń" />&lt;p>Jak szybko uruchomić serwer WWW z wiersza poleceń?&lt;/p>
+&lt;/div>&lt;p>Powyższe polecenie pobiera dziennik zdarzeń bezpieczeństwa, filtruje tylko te wpisy, które mają identyfikator zdarzenia 4625 (co odpowiada nieudanej próbie logowania), grupuje je według daty (za pomocą właściwości TimeGenerated), a następnie zwraca nazwę grupy (czyli datę) oraz liczbę wpisów w grupie (czyli liczbę nieudanych prób logowania w danym dniu).&lt;/p>
+&lt;h2 id="startrestart-uruchamianie-systemu">Start/restart uruchamianie systemu&lt;/h2>
+&lt;p>&lt;a class="link" href="https://serverfault.com/questions/401961/event-log-time-when-computer-start-up-boot-up" target="_blank" rel="noopener"
+>https://serverfault.com/questions/401961/event-log-time-when-computer-start-up-boot-up&lt;/a>&lt;/p>
+&lt;p>EventViewer ( System Log )
+6009 and 6005 same time stamp, system just started.
+6013 - system has been up for a day or more, time in seconds.
+6006 - the system was rebooted or shutdown.&lt;/p>
+&lt;blockquote>
+&lt;p>This answer is no longer complete because in Windows 10, events 6009 and 6005 are not always logged if a user clicks &amp;ldquo;Shut Down&amp;rdquo; from the Start Menu and then turns on the computer by pressing the power button.&lt;/p>
+&lt;/blockquote>
+&lt;p>PowerShell: Get All Reboot Messages in the Last Month&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Get-EventLog -LogName System -After $(Get-Date).AddMonths(-1) | Where { 6009,6005,6006 -contains $_.EventID}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PHP, python: serwer WWW uruchamiany z wiersza poleceń</title><link>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84/</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84/</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP, python: serwer WWW uruchamiany z wiersza poleceń" />&lt;p>Jak szybko uruchomić serwer WWW z wiersza poleceń?&lt;/p>
 &lt;p>kilka sposobów:&lt;/p>
 &lt;h2 id="php">PHP&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
