@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PHP on urbanowski.info</title><link>/categories/php.html</link><description>Recent content in PHP on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/php/index.xml" rel="self" type="application/rss+xml"/><item><title>Telegram - wysyłanie wiadomości przez API</title><link>/telegram-wysy%C5%82anie-wiadomo%C5%9Bci-przez-api.html</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>/telegram-wysy%C5%82anie-wiadomo%C5%9Bci-przez-api.html</guid><description>&lt;div class="highlight">&lt;div class="chroma">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PHP on urbanowski.info</title><link>/categories/php.html</link><description>Recent content in PHP on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/php/index.xml" rel="self" type="application/rss+xml"/><item><title>Telegram - wysyłanie wiadomości przez API</title><link>/post/2023/2023-06-15-telegramy-send-messege.html</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>/post/2023/2023-06-15-telegramy-send-messege.html</guid><description>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
@@ -23,7 +23,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">/tool/fetch url=&amp;#34;https://api.telegram.org/bot&amp;lt;API-KEY&amp;gt;/sendMessage&amp;#34; http-method=post http-data=&amp;#34;chat_id=&amp;lt;CHAT-ID&amp;gt;&amp;amp;text=Wiadomosc
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PHP, python: serwer WWW uruchamiany z wiersza poleceń</title><link>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84.html</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP, python: serwer WWW uruchamiany z wiersza poleceń" />&lt;p>Jak szybko uruchomić serwer WWW z wiersza poleceń?&lt;/p>
+&lt;/div></description></item><item><title>PHP, python: serwer WWW uruchamiany z wiersza poleceń</title><link>/post/2022/2022-05-25-15-03-58_phppython_php-serwer-www-uruchamiany-z-wiersza-polecen.html</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-25-15-03-58_phppython_php-serwer-www-uruchamiany-z-wiersza-polecen.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP, python: serwer WWW uruchamiany z wiersza poleceń" />&lt;p>Jak szybko uruchomić serwer WWW z wiersza poleceń?&lt;/p>
 &lt;p>kilka sposobów:&lt;/p>
 &lt;h2 id="php">PHP&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -53,7 +53,7 @@
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://gist.github.com/willurd/5720255" target="_blank" rel="noopener"
 >https://gist.github.com/willurd/5720255&lt;/a> - Big list of http static server one-liners&lt;/li>
-&lt;/ul></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/php-test-po%C5%82%C4%85czenia-z-mssql.html</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/php-test-po%C5%82%C4%85czenia-z-mssql.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
+&lt;/ul></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/post/2022/2022-05-23-14-29-23_phpmssql_php-test-polaczenia-z-mssql.html</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-23-14-29-23_phpmssql_php-test-polaczenia-z-mssql.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programowanie on urbanowski.info</title><link>/categories/programowanie.html</link><description>Recent content in Programowanie on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Tue, 14 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/programowanie/index.xml" rel="self" type="application/rss+xml"/><item><title>Electron: creating portable windows application</title><link>/electron-creating-portable-windows-application.html</link><pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate><guid>/electron-creating-portable-windows-application.html</guid><description>&lt;h2 id="how-to-create-a-portable-windows-application-without-an-installer-from-an-electron-project">How to create a portable windows application without an installer from an electron project:&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programowanie on urbanowski.info</title><link>/categories/programowanie.html</link><description>Recent content in Programowanie on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Tue, 14 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/programowanie/index.xml" rel="self" type="application/rss+xml"/><item><title>Electron: creating portable windows application</title><link>/post/2022/2022-06-14-15-09-03_jselectron_electron-creating-portable-windows-application.html</link><pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-06-14-15-09-03_jselectron_electron-creating-portable-windows-application.html</guid><description>&lt;h2 id="how-to-create-a-portable-windows-application-without-an-installer-from-an-electron-project">How to create a portable windows application without an installer from an electron project:&lt;/h2>
 &lt;p>Clone the electron-quick-start repo:
 git clone &lt;a class="link" href="https://github.com/electron/electron-quick-start" target="_blank" rel="noopener"
 >https://github.com/electron/electron-quick-start&lt;/a>
@@ -29,7 +29,7 @@ Edit package.json - update the &amp;rsquo;name&amp;rsquo; and add a new script &
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>&amp;rsquo;npm start&amp;rsquo; will bring up the application
-&amp;rsquo;npm run packager&amp;rsquo; will package the app for windows. You will see a new directory &amp;lsquo;my-app-name-win32-x64&amp;rsquo; in the top directory of the project, with a my-app-name.exe&lt;/p></description></item><item><title>GIT: notatki</title><link>/git-notatki.html</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>/git-notatki.html</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post GIT: notatki" />&lt;h2 id="git-push-do-repozytorium-non-bare">git push do repozytorium non-bare&lt;/h2>
+&amp;rsquo;npm run packager&amp;rsquo; will package the app for windows. You will see a new directory &amp;lsquo;my-app-name-win32-x64&amp;rsquo; in the top directory of the project, with a my-app-name.exe&lt;/p></description></item><item><title>GIT: notatki</title><link>/post/2022/2022-05-30-20-26-55_git_git-notatki.html</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-30-20-26-55_git_git-notatki.html</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post GIT: notatki" />&lt;h2 id="git-push-do-repozytorium-non-bare">git push do repozytorium non-bare&lt;/h2>
 &lt;p>Set receive.denyCurrentBranch to ignore, warn or updateInstead (according to your needs) in the remote non-bare repository to allow pushing the current branch.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -49,7 +49,7 @@ Edit package.json - update the &amp;rsquo;name&amp;rsquo; and add a new script &
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git config receive.denyCurrentBranch updateInstead
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PHP, python: serwer WWW uruchamiany z wiersza poleceń</title><link>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84.html</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>/php-python-serwer-www-uruchamiany-z-wiersza-polece%C5%84.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP, python: serwer WWW uruchamiany z wiersza poleceń" />&lt;p>Jak szybko uruchomić serwer WWW z wiersza poleceń?&lt;/p>
+&lt;/div></description></item><item><title>PHP, python: serwer WWW uruchamiany z wiersza poleceń</title><link>/post/2022/2022-05-25-15-03-58_phppython_php-serwer-www-uruchamiany-z-wiersza-polecen.html</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-25-15-03-58_phppython_php-serwer-www-uruchamiany-z-wiersza-polecen.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP, python: serwer WWW uruchamiany z wiersza poleceń" />&lt;p>Jak szybko uruchomić serwer WWW z wiersza poleceń?&lt;/p>
 &lt;p>kilka sposobów:&lt;/p>
 &lt;h2 id="php">PHP&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -79,7 +79,7 @@ Edit package.json - update the &amp;rsquo;name&amp;rsquo; and add a new script &
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://gist.github.com/willurd/5720255" target="_blank" rel="noopener"
 >https://gist.github.com/willurd/5720255&lt;/a> - Big list of http static server one-liners&lt;/li>
-&lt;/ul></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/php-test-po%C5%82%C4%85czenia-z-mssql.html</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/php-test-po%C5%82%C4%85czenia-z-mssql.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
+&lt;/ul></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/post/2022/2022-05-23-14-29-23_phpmssql_php-test-polaczenia-z-mssql.html</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-23-14-29-23_phpmssql_php-test-polaczenia-z-mssql.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
@@ -109,7 +109,7 @@ Edit package.json - update the &amp;rsquo;name&amp;rsquo; and add a new script &
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Git: linki</title><link>/git-linki.html</link><pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate><guid>/git-linki.html</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post Git: linki" />&lt;h1 id="linki-do-materiałów-dotyczących-git-a">Linki do materiałów dotyczących git-a&lt;/h1>
+&lt;/div></description></item><item><title>Git: linki</title><link>/post/2022/2022-05-21-10-48-44_gitlinki_git-linki.html</link><pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-21-10-48-44_gitlinki_git-linki.html</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post Git: linki" />&lt;h1 id="linki-do-materiałów-dotyczących-git-a">Linki do materiałów dotyczących git-a&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://stormit.pl/git/" target="_blank" rel="noopener"
 >https://stormit.pl/git/&lt;/a>&lt;/li>

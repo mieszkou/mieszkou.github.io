@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>windows on urbanowski.info</title><link>/tags/windows.html</link><description>Recent content in windows on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>PC-Market: błąd drukowania EPrinter Printer is not currently printing</title><link>/pc-market-b%C5%82%C4%85d-drukowania-eprinter-printer-is-not-currently-printing.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-market-b%C5%82%C4%85d-drukowania-eprinter-printer-is-not-currently-printing.html</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: błąd drukowania EPrinter Printer is not currently printing" />&lt;p>Błąd drukowania - EPrinter Printer is not currently printing
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>windows on urbanowski.info</title><link>/tags/windows.html</link><description>Recent content in windows on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>PC-Market: błąd drukowania EPrinter Printer is not currently printing</title><link>/post/2022/2022-05-16-03-30-05_pcmarket-blad-drukowania-eprinter-printer-is-not-currently-printing.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-03-30-05_pcmarket-blad-drukowania-eprinter-printer-is-not-currently-printing.html</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: błąd drukowania EPrinter Printer is not currently printing" />&lt;p>Błąd drukowania - EPrinter Printer is not currently printing
 Trzeba odinstalować aktualizacje:&lt;/p>
 &lt;ul>
 &lt;li>KB3177725 - dla Windows 7, 8&lt;/li>
 &lt;li>KB3176493 - dla Windows 10&lt;/li>
-&lt;/ul></description></item><item><title>PowerShell: Lista użytkowników i czas ostatniego logowania</title><link>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Lista użytkowników i czas ostatniego logowania" />&lt;p>Lista użytkowników i czas ostatniego logowania:&lt;/p>
+&lt;/ul></description></item><item><title>PowerShell: Lista użytkowników i czas ostatniego logowania</title><link>/post/2022/2022-05-16-02-55-53_powershellwindows_powershell-lista-uzytkownikow-i-czas-ostatniego-logowania.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-02-55-53_powershellwindows_powershell-lista-uzytkownikow-i-czas-ostatniego-logowania.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Lista użytkowników i czas ostatniego logowania" />&lt;p>Lista użytkowników i czas ostatniego logowania:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -12,7 +12,7 @@ Trzeba odinstalować aktualizacje:&lt;/p>
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">get-aduser -f * -pr lastlogondate|sort -property lastlogondate|ft samaccountname,lastlogondate -auto
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PowerShell: Reset uprawnień do wszystkich plików i katalogów</title><link>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Reset uprawnień do wszystkich plików i katalogów" />&lt;p>Reset uprawnień do wszystkich plików i katalogów:&lt;/p>
+&lt;/div></description></item><item><title>PowerShell: Reset uprawnień do wszystkich plików i katalogów</title><link>/post/2022/2022-05-16-02-50-26_powershellwindows_powershell-reset-uprawnien-do-wszystkich-plikow-i-katalogow.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-02-50-26_powershellwindows_powershell-reset-uprawnien-do-wszystkich-plikow-i-katalogow.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Reset uprawnień do wszystkich plików i katalogów" />&lt;p>Reset uprawnień do wszystkich plików i katalogów:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -21,7 +21,7 @@ Trzeba odinstalować aktualizacje:&lt;/p>
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">icacls * /q /c /t /reset
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PowerShell: Zmiana sieci publicznej na prywatną</title><link>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Zmiana sieci publicznej na prywatną" />&lt;p>Zmiana sieci publicznej na prywatną&lt;/p>
+&lt;/div></description></item><item><title>PowerShell: Zmiana sieci publicznej na prywatną</title><link>/post/2022/2022-05-16-02-54-34_powershellwindows_powershell-zmiana-sieci-publicznej-na-prywatna.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-02-54-34_powershellwindows_powershell-zmiana-sieci-publicznej-na-prywatna.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Zmiana sieci publicznej na prywatną" />&lt;p>Zmiana sieci publicznej na prywatną&lt;/p>
 &lt;p>&lt;code>Ethernet&lt;/code> to nazwa połączenia sieciowego.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -31,7 +31,7 @@ Trzeba odinstalować aktualizacje:&lt;/p>
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Set-NetConnectionProfile -InterfaceAlias &amp;#34;Ethernet&amp;#34; -NetworkCategory Private
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Windows 10: błędy touchpada i zrzuty log-a</title><link>/windows-10-b%C5%82%C4%99dy-touchpada-i-zrzuty-log-a.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-10-b%C5%82%C4%99dy-touchpada-i-zrzuty-log-a.html</guid><description>&lt;p>Błędy Touchpada i zrzuty log - wyłączenie&lt;/p>
+&lt;/div></description></item><item><title>Windows 10: błędy touchpada i zrzuty log-a</title><link>/post/2022/2022-05-16-03-26-19_windows_windows-10-bledy-touchpada-i-zrzuty-log-a.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-03-26-19_windows_windows-10-bledy-touchpada-i-zrzuty-log-a.html</guid><description>&lt;p>Błędy Touchpada i zrzuty log - wyłączenie&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -40,7 +40,7 @@ Trzeba odinstalować aktualizacje:&lt;/p>
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">reg add HKEY_LOCAL_MACHINESYSTEMCurrentControlSetservicesSynTPParametersDebug /v DumpKernel /d 00000000 /t REG_DWORD /f
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Windows: Update error 0x80070643</title><link>/windows-update-error-0x80070643.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-update-error-0x80070643.html</guid><description>&lt;h2 id="windows-update-error-0x80070643">Windows Update error 0x80070643&lt;/h2>
+&lt;/div></description></item><item><title>Windows: Update error 0x80070643</title><link>/post/2022/2022-05-16-03-28-46_windowswindows-error_windows-update-error-0x80070643.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-03-28-46_windowswindows-error_windows-update-error-0x80070643.html</guid><description>&lt;h2 id="windows-update-error-0x80070643">Windows Update error 0x80070643&lt;/h2>
 &lt;p>Here’s what you can do to fix the issue.&lt;/p>
 &lt;p>Rename the SoftwareDistribution folder&lt;/p>
 &lt;p>To solve this, it is advisable to rename the SoftwareDistribution folder. To rename the Software Distribution folder, open an elevated command prompt windows, type the following commands one after the other, and hit Enter:&lt;/p>
@@ -120,7 +120,7 @@ This problem is the result of the Windows Update agent file (Wups2.dll) not bein
 &lt;li>REGSVR32 WUWEBV.DLL /S&lt;/li>
 &lt;li>REGSVR32 JSCRIPT.DLL /S&lt;/li>
 &lt;/ol>
-&lt;p>REGSVR32 MSXML3.DLL /S&lt;/p></description></item><item><title>Windows: Wymuszenie zmiany haseł na komputerze</title><link>/windows-wymuszenie-zmiany-hase%C5%82-na-komputerze.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/windows-wymuszenie-zmiany-hase%C5%82-na-komputerze.html</guid><description>&lt;p>Poniższe komendy należy wykonać w wierszu poleceń uruchomionym jako Administrator&lt;/p>
+&lt;p>REGSVR32 MSXML3.DLL /S&lt;/p></description></item><item><title>Windows: Wymuszenie zmiany haseł na komputerze</title><link>/post/2022/2022-05-16-03-22-06_windows_windows-wymuszenie-zmiany-hasel-na-komputerze.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-03-22-06_windows_windows-wymuszenie-zmiany-hasel-na-komputerze.html</guid><description>&lt;p>Poniższe komendy należy wykonać w wierszu poleceń uruchomionym jako Administrator&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
