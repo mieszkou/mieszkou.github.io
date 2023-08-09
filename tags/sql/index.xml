@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sql on urbanowski.info</title><link>/tags/sql/</link><description>Recent content in sql on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Thu, 30 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sql/index.xml" rel="self" type="application/rss+xml"/><item><title>MSSQL: Szukanie ciągu znaków we wszystkich tabelach</title><link>/mssql-szukanie-ci%C4%85gu-znak%C3%B3w-we-wszystkich-tabelach/</link><pubDate>Thu, 30 Mar 2023 00:00:00 +0000</pubDate><guid>/mssql-szukanie-ci%C4%85gu-znak%C3%B3w-we-wszystkich-tabelach/</guid><description>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sql on urbanowski.info</title><link>/tags/sql.html</link><description>Recent content in sql on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Thu, 30 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sql/index.xml" rel="self" type="application/rss+xml"/><item><title>MSSQL: Szukanie ciągu znaków we wszystkich tabelach</title><link>/mssql-szukanie-ci%C4%85gu-znak%C3%B3w-we-wszystkich-tabelach.html</link><pubDate>Thu, 30 Mar 2023 00:00:00 +0000</pubDate><guid>/mssql-szukanie-ci%C4%85gu-znak%C3%B3w-we-wszystkich-tabelach.html</guid><description>&lt;ul>
 &lt;li>&lt;a class="link" href="https://stackoverflow.com/questions/15757263/find-a-string-by-searching-all-tables-in-sql-server" target="_blank" rel="noopener"
 >https://stackoverflow.com/questions/15757263/find-a-string-by-searching-all-tables-in-sql-server&lt;/a>&lt;/li>
 &lt;/ul>
@@ -501,7 +501,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">*********************************************************************/&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>SQL Server Config manager error: Cannot connect to WMI provider</title><link>/sql-server-config-manager-error-cannot-connect-to-wmi-provider/</link><pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate><guid>/sql-server-config-manager-error-cannot-connect-to-wmi-provider/</guid><description>&lt;h1 id="sql-server-config-manager-error-cannot-connect-to-wmi-provider">SQL Server Config manager error: Cannot connect to WMI provider&lt;/h1>
+&lt;/div></description></item><item><title>SQL Server Config manager error: Cannot connect to WMI provider</title><link>/sql-server-config-manager-error-cannot-connect-to-wmi-provider.html</link><pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate><guid>/sql-server-config-manager-error-cannot-connect-to-wmi-provider.html</guid><description>&lt;h1 id="sql-server-config-manager-error-cannot-connect-to-wmi-provider">SQL Server Config manager error: Cannot connect to WMI provider&lt;/h1>
 &lt;p>Run Cmd as Administrator and execute these commands:&lt;/p>
 &lt;p>First go to SQL Shared folder according to your sql version:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -541,7 +541,7 @@
 &lt;p>Here is more explanation: &lt;a class="link" href="https://learn.microsoft.com/en-us/windows/desktop/wmisdk/mofcomp" target="_blank" rel="noopener"
 >https://learn.microsoft.com/en-us/windows/desktop/wmisdk/mofcomp&lt;/a>&lt;/p>
 &lt;p>src: &lt;a class="link" href="https://stackoverflow.com/questions/44753745/sql-server-config-manager-error-cannot-connect-to-wmi-provider" target="_blank" rel="noopener"
->https://stackoverflow.com/questions/44753745/sql-server-config-manager-error-cannot-connect-to-wmi-provider&lt;/a>&lt;/p></description></item><item><title>SQL: pętla z opóźnieniem</title><link>/sql-p%C4%99tla-z-op%C3%B3%C5%BAnieniem/</link><pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate><guid>/sql-p%C4%99tla-z-op%C3%B3%C5%BAnieniem/</guid><description>&lt;div class="highlight">&lt;div class="chroma">
+>https://stackoverflow.com/questions/44753745/sql-server-config-manager-error-cannot-connect-to-wmi-provider&lt;/a>&lt;/p></description></item><item><title>SQL: pętla z opóźnieniem</title><link>/sql-p%C4%99tla-z-op%C3%B3%C5%BAnieniem.html</link><pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate><guid>/sql-p%C4%99tla-z-op%C3%B3%C5%BAnieniem.html</guid><description>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
@@ -577,11 +577,11 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">END&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>SQLite: CSV</title><link>/sqlite-csv/</link><pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate><guid>/sqlite-csv/</guid><description>&lt;h2 id="zapytania-sql-na-danych-z-pliku-csv">Zapytania SQL na danych z pliku CSV&lt;/h2>
+&lt;/div></description></item><item><title>SQLite: CSV</title><link>/sqlite-csv.html</link><pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate><guid>/sqlite-csv.html</guid><description>&lt;h2 id="zapytania-sql-na-danych-z-pliku-csv">Zapytania SQL na danych z pliku CSV&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://til.simonwillison.net/sqlite/one-line-csv-operations" target="_blank" rel="noopener"
 >https://til.simonwillison.net/sqlite/one-line-csv-operations&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/php-test-po%C5%82%C4%85czenia-z-mssql/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/php-test-po%C5%82%C4%85czenia-z-mssql/</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
+&lt;/ul></description></item><item><title>PHP: test połączenia z MSSQL</title><link>/php-test-po%C5%82%C4%85czenia-z-mssql.html</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>/php-test-po%C5%82%C4%85czenia-z-mssql.html</guid><description>&lt;img src="/img/2023-02-12-23-01-39.png" alt="Featured image of post PHP: test połączenia z MSSQL" />&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
@@ -611,7 +611,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PC-Market: zmiana kodów krótkich na wagowe</title><link>/pc-market-zmiana-kod%C3%B3w-kr%C3%B3tkich-na-wagowe/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-market-zmiana-kod%C3%B3w-kr%C3%B3tkich-na-wagowe/</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: zmiana kodów krótkich na wagowe" />&lt;p>PC-Market: zmiana kodów krótkich na wagowe&lt;/p>
+&lt;/div></description></item><item><title>PC-Market: zmiana kodów krótkich na wagowe</title><link>/pc-market-zmiana-kod%C3%B3w-kr%C3%B3tkich-na-wagowe.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-market-zmiana-kod%C3%B3w-kr%C3%B3tkich-na-wagowe.html</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: zmiana kodów krótkich na wagowe" />&lt;p>PC-Market: zmiana kodów krótkich na wagowe&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -651,7 +651,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">towar&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">towid&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">50&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PC-POS: zablokowana transmisja</title><link>/pc-pos-zablokowana-transmisja/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-pos-zablokowana-transmisja/</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-POS: zablokowana transmisja" />&lt;h2 id="problem">Problem&lt;/h2>
+&lt;/div></description></item><item><title>PC-POS: zablokowana transmisja</title><link>/pc-pos-zablokowana-transmisja.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/pc-pos-zablokowana-transmisja.html</guid><description>&lt;img src="/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-POS: zablokowana transmisja" />&lt;h2 id="problem">Problem&lt;/h2>
 &lt;p>Transmisja zatrzymuje się na jednym z dokumentów.&lt;/p>
 &lt;h2 id="rozwiązanie">Rozwiązanie&lt;/h2>
 &lt;ul>
@@ -669,7 +669,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">UPDATE&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">receipt&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">set&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">isactive&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">receiptid&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">11234&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>VSCode: mssql plugin - konfiguracja połączenia</title><link>/vscode-mssql-plugin-konfiguracja-po%C5%82%C4%85czenia/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/vscode-mssql-plugin-konfiguracja-po%C5%82%C4%85czenia/</guid><description>&lt;p>&lt;code>Preferences: Open Settings (JSON)&lt;/code>&lt;/p>
+&lt;/div></description></item><item><title>VSCode: mssql plugin - konfiguracja połączenia</title><link>/vscode-mssql-plugin-konfiguracja-po%C5%82%C4%85czenia.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/vscode-mssql-plugin-konfiguracja-po%C5%82%C4%85czenia.html</guid><description>&lt;p>&lt;code>Preferences: Open Settings (JSON)&lt;/code>&lt;/p>
 &lt;p>a w nim konfiguracja połączeń MSSQL:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -701,7 +701,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>&lt;span class="err">,&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>MSSQL - zmiana hasła użytkownika sa</title><link>/mssql-zmiana-has%C5%82a-u%C5%BCytkownika-sa/</link><pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate><guid>/mssql-zmiana-has%C5%82a-u%C5%BCytkownika-sa/</guid><description>&lt;p>Jeśli nie znam hasła użytkownika &lt;code>sa&lt;/code>, ale mam dostęp do konta windows z uprawnieniami do serwera SQL (najczęściej użytkownik który instalował instancję SQL) możemy zmienić hasło użytkownika &lt;code>sa&lt;/code>.&lt;/p>
+&lt;/div></description></item><item><title>MSSQL - zmiana hasła użytkownika sa</title><link>/mssql-zmiana-has%C5%82a-u%C5%BCytkownika-sa.html</link><pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate><guid>/mssql-zmiana-has%C5%82a-u%C5%BCytkownika-sa.html</guid><description>&lt;p>Jeśli nie znam hasła użytkownika &lt;code>sa&lt;/code>, ale mam dostęp do konta windows z uprawnieniami do serwera SQL (najczęściej użytkownik który instalował instancję SQL) możemy zmienić hasło użytkownika &lt;code>sa&lt;/code>.&lt;/p>
 &lt;p>W tym celu łączę się z serwerem SQL:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">

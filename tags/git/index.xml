@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on urbanowski.info</title><link>/tags/git/</link><description>Recent content in git on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 30 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>GIT: notatki</title><link>/git-notatki/</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>/git-notatki/</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post GIT: notatki" />&lt;h2 id="git-push-do-repozytorium-non-bare">git push do repozytorium non-bare&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on urbanowski.info</title><link>/tags/git.html</link><description>Recent content in git on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 30 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>GIT: notatki</title><link>/git-notatki.html</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>/git-notatki.html</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post GIT: notatki" />&lt;h2 id="git-push-do-repozytorium-non-bare">git push do repozytorium non-bare&lt;/h2>
 &lt;p>Set receive.denyCurrentBranch to ignore, warn or updateInstead (according to your needs) in the remote non-bare repository to allow pushing the current branch.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -18,7 +18,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git config receive.denyCurrentBranch updateInstead
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Git: linki</title><link>/git-linki/</link><pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate><guid>/git-linki/</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post Git: linki" />&lt;h1 id="linki-do-materiałów-dotyczących-git-a">Linki do materiałów dotyczących git-a&lt;/h1>
+&lt;/div></description></item><item><title>Git: linki</title><link>/git-linki.html</link><pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate><guid>/git-linki.html</guid><description>&lt;img src="/img/2023-02-12-22-47-39.png" alt="Featured image of post Git: linki" />&lt;h1 id="linki-do-materiałów-dotyczących-git-a">Linki do materiałów dotyczących git-a&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://stormit.pl/git/" target="_blank" rel="noopener"
 >https://stormit.pl/git/&lt;/a>&lt;/li>

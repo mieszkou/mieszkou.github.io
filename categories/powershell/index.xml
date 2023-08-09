@@ -1,4 +1,281 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PowerShell on urbanowski.info</title><link>/categories/powershell/</link><description>Recent content in PowerShell on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 22 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>Powershell: podniesienie uprawnień i wykonanie polecenia</title><link>/powershell-podniesienie-uprawnie%C5%84-i-wykonanie-polecenia/</link><pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate><guid>/powershell-podniesienie-uprawnie%C5%84-i-wykonanie-polecenia/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post Powershell: podniesienie uprawnień i wykonanie polecenia" />&lt;div class="highlight">&lt;div class="chroma">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PowerShell on urbanowski.info</title><link>/categories/powershell.html</link><description>Recent content in PowerShell on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Wed, 09 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>Menu w PowerShell</title><link>/menu-w-powershell.html</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>/menu-w-powershell.html</guid><description>&lt;p>Menu w PowerShell po którym można poruszać się strzałkami.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://qna.habr.com/answer?answer_id=1522379" target="_blank" rel="noopener"
+>https://qna.habr.com/answer?answer_id=1522379&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">function&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">ShowMenu([array]$Menu&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">int&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="nv">$Default&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$minY&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">CursorTop&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$y&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">Math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Max&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="no">Math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Min&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$Default&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$Menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Count&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="mf">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">do&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">CursorTop&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$minY&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">CursorLeft&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$i&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">foreach&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$item&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="nv">$Menu&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$colors&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">@&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">BackgroundColor&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$i&lt;/span> &lt;span class="o">-ne&lt;/span> &lt;span class="nv">$y&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">BackgroundColor&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="s1">&amp;#39;Cyan&amp;#39;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ForegroundColor&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$i&lt;/span> &lt;span class="o">-ne&lt;/span> &lt;span class="nv">$y&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">ForegroundColor&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39; Blue&amp;#39;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Host&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39; {0}. {1} &amp;#39;&lt;/span> &lt;span class="o">-f&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$i&lt;/span>&lt;span class="p">+&lt;/span>&lt;span class="mf">1&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nv">$item&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nv">@colors&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$i&lt;/span>&lt;span class="p">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$k&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">ReadKey&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">switch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$k&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Key&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;UpArrow&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$y&lt;/span> &lt;span class="o">-gt&lt;/span> &lt;span class="mf">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nv">$y&lt;/span>&lt;span class="p">--&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;DownArrow&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$y&lt;/span> &lt;span class="o">-lt&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Count&lt;/span> &lt;span class="p">-&lt;/span> &lt;span class="mf">1&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nv">$y&lt;/span>&lt;span class="p">++&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Enter&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nv">$Menu&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$y&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$k&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Key&lt;/span> &lt;span class="n">-notin&lt;/span> &lt;span class="p">([&lt;/span>&lt;span class="no">ConsoleKey&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Escape&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">ConsoleKey&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Enter&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$Menu&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s1">&amp;#39;test1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;text2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;menu3&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;result4&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ShowMenu&lt;/span> &lt;span class="nv">$menu&lt;/span> &lt;span class="mf">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>I inna wersja zgapiona z Sophiascript:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/farag2/Sophia-Script-for-Windows/blob/bf920bf64d7a3088a5c92f716602f018e2354af5/src/Sophia_Script_for_Windows_10_LTSC_2019/Module/Sophia.psm1#L836" target="_blank" rel="noopener"
+>https://github.com/farag2/Sophia-Script-for-Windows/blob/bf920bf64d7a3088a5c92f716602f018e2354af5/src/Sophia_Script_for_Windows_10_LTSC_2019/Module/Sophia.psm1#L836&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/assets/2023-08-09-22-17-56.png"
+loading="lazy"
+>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;span class="lnt">79
+&lt;/span>&lt;span class="lnt">80
+&lt;/span>&lt;span class="lnt">81
+&lt;/span>&lt;span class="lnt">82
+&lt;/span>&lt;span class="lnt">83
+&lt;/span>&lt;span class="lnt">84
+&lt;/span>&lt;span class="lnt">85
+&lt;/span>&lt;span class="lnt">86
+&lt;/span>&lt;span class="lnt">87
+&lt;/span>&lt;span class="lnt">88
+&lt;/span>&lt;span class="lnt">89
+&lt;/span>&lt;span class="lnt">90
+&lt;/span>&lt;span class="lnt">91
+&lt;/span>&lt;span class="lnt">92
+&lt;/span>&lt;span class="lnt">93
+&lt;/span>&lt;span class="lnt">94
+&lt;/span>&lt;span class="lnt">95
+&lt;/span>&lt;span class="lnt">96
+&lt;/span>&lt;span class="lnt">97
+&lt;/span>&lt;span class="lnt">98
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl"> &lt;span class="cm">&amp;lt;#
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">SYNOPSIS&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> The &amp;#34;Show menu&amp;#34; function with the up/down arrow keys and enter key to make a selection
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER Menu
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Array of items to choose from
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER Default
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Default selected item in array
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER AddSkip
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Add localized extracted &amp;#34;Skip&amp;#34; string from shell32.dll
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Show-Menu -Menu $Items -Default 1
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">LINK&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> https://qna.habr.com/answer?answer_id=1522379
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> #&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="vm">script:&lt;/span>&lt;span class="nb">Show-Menu&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">CmdletBinding&lt;/span>&lt;span class="p">()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">param&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">Mandatory&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">array&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Menu&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">Mandatory&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">int&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Default&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">Mandatory&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$false&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">switch&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$AddSkip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Information&lt;/span> &lt;span class="n">-MessageData&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span> &lt;span class="n">-InformationAction&lt;/span> &lt;span class="k">Continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># Add &amp;#34;Please use the arrow keys 🠕 and 🠗 on your keyboard to select your answer&amp;#34; to menu&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Menu&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="nv">$Localization&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">KeyboardArrows&lt;/span> &lt;span class="o">-f&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Char&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">ConvertFromUtf32&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">0x1F815&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Char&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">ConvertFromUtf32&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">0x1F817&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$AddSkip&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># Extract the localized &amp;#34;Skip&amp;#34; string from shell32.dll&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Menu&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">WinAPI.GetStr&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">GetString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">16956&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># https://github.com/microsoft/terminal/issues/14992&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">BufferHeight&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="nv">$Menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Count&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$minY&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">CursorTop&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$y&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">Math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Max&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="no">Math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Min&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$Default&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$Menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Count&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="mf">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">CursorTop&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$minY&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">CursorLeft&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$i&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">foreach&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$item&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="nv">$Menu&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$i&lt;/span> &lt;span class="o">-ne&lt;/span> &lt;span class="nv">$y&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Information&lt;/span> &lt;span class="n">-MessageData&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39; {1} &amp;#39;&lt;/span> &lt;span class="o">-f&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$i&lt;/span>&lt;span class="p">+&lt;/span>&lt;span class="mf">1&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nv">$item&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">-InformationAction&lt;/span> &lt;span class="k">Continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Information&lt;/span> &lt;span class="n">-MessageData&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;[ {1} ]&amp;#39;&lt;/span> &lt;span class="o">-f&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$i&lt;/span>&lt;span class="p">+&lt;/span>&lt;span class="mf">1&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nv">$item&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">-InformationAction&lt;/span> &lt;span class="k">Continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$i&lt;/span>&lt;span class="p">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$k&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">Console&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">ReadKey&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">switch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$k&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;UpArrow&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$y&lt;/span> &lt;span class="o">-gt&lt;/span> &lt;span class="mf">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$y&lt;/span>&lt;span class="p">--&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;DownArrow&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$y&lt;/span> &lt;span class="o">-lt&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Count&lt;/span> &lt;span class="p">-&lt;/span> &lt;span class="mf">1&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$y&lt;/span>&lt;span class="p">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;Enter&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$Menu&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$y&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$k&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Key&lt;/span> &lt;span class="n">-notin&lt;/span> &lt;span class="p">([&lt;/span>&lt;span class="no">ConsoleKey&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Escape&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">ConsoleKey&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Enter&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Powershell: podniesienie uprawnień i wykonanie polecenia</title><link>/powershell-podniesienie-uprawnie%C5%84-i-wykonanie-polecenia.html</link><pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate><guid>/powershell-podniesienie-uprawnie%C5%84-i-wykonanie-polecenia.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post Powershell: podniesienie uprawnień i wykonanie polecenia" />&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
@@ -8,7 +285,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Start-Process&lt;/span> &lt;span class="n">powershell&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span> &lt;span class="n">-Verb&lt;/span> &lt;span class="n">RunAs&lt;/span> &lt;span class="n">-ArgumentList&lt;/span> &lt;span class="s2">&amp;#34;-NoProfile -ExecutionPolicy Bypass -Command &lt;/span>&lt;span class="se">`&amp;#34;&lt;/span>&lt;span class="s2">&amp;amp; {Install-Module -Name AzureAD -Force -AllowClobber}&lt;/span>&lt;span class="se">`&amp;#34;&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Powershell: nieudane próby logowania</title><link>/powershell-nieudane-pr%C3%B3by-logowania/</link><pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate><guid>/powershell-nieudane-pr%C3%B3by-logowania/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post Powershell: nieudane próby logowania" />&lt;p>Aby policzyć nieudane próby logowania w kolejnych dniach za pomocą PowerShell, można użyć następującej komendy:&lt;/p>
+&lt;/div></description></item><item><title>Powershell: nieudane próby logowania</title><link>/powershell-nieudane-pr%C3%B3by-logowania.html</link><pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate><guid>/powershell-nieudane-pr%C3%B3by-logowania.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post Powershell: nieudane próby logowania" />&lt;p>Aby policzyć nieudane próby logowania w kolejnych dniach za pomocą PowerShell, można użyć następującej komendy:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -37,11 +314,11 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Get-EventLog -LogName System -After $(Get-Date).AddMonths(-1) | Where { 6009,6005,6006 -contains $_.EventID}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PowerShell: linki</title><link>/powershell-linki/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-linki/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: linki" />&lt;h1 id="linki-z-materiałami-dotyczącymi-powershell-a">Linki z materiałami dotyczącymi powershell-a&lt;/h1>
+&lt;/div></description></item><item><title>PowerShell: linki</title><link>/powershell-linki.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-linki.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: linki" />&lt;h1 id="linki-z-materiałami-dotyczącymi-powershell-a">Linki z materiałami dotyczącymi powershell-a&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/pl-pl/training/browse/" target="_blank" rel="noopener"
 >https://learn.microsoft.com/pl-pl/training/browse/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>PowerShell: Lista użytkowników i czas ostatniego logowania</title><link>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Lista użytkowników i czas ostatniego logowania" />&lt;p>Lista użytkowników i czas ostatniego logowania:&lt;/p>
+&lt;/ul></description></item><item><title>PowerShell: Lista użytkowników i czas ostatniego logowania</title><link>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-lista-u%C5%BCytkownik%C3%B3w-i-czas-ostatniego-logowania.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Lista użytkowników i czas ostatniego logowania" />&lt;p>Lista użytkowników i czas ostatniego logowania:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -50,7 +327,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">get-aduser -f * -pr lastlogondate|sort -property lastlogondate|ft samaccountname,lastlogondate -auto
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PowerShell: Reset uprawnień do wszystkich plików i katalogów</title><link>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Reset uprawnień do wszystkich plików i katalogów" />&lt;p>Reset uprawnień do wszystkich plików i katalogów:&lt;/p>
+&lt;/div></description></item><item><title>PowerShell: Reset uprawnień do wszystkich plików i katalogów</title><link>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-reset-uprawnie%C5%84-do-wszystkich-plik%C3%B3w-i-katalog%C3%B3w.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Reset uprawnień do wszystkich plików i katalogów" />&lt;p>Reset uprawnień do wszystkich plików i katalogów:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -59,7 +336,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">icacls * /q /c /t /reset
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PowerShell: Zmiana sieci publicznej na prywatną</title><link>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85/</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Zmiana sieci publicznej na prywatną" />&lt;p>Zmiana sieci publicznej na prywatną&lt;/p>
+&lt;/div></description></item><item><title>PowerShell: Zmiana sieci publicznej na prywatną</title><link>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/powershell-zmiana-sieci-publicznej-na-prywatn%C4%85.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Zmiana sieci publicznej na prywatną" />&lt;p>Zmiana sieci publicznej na prywatną&lt;/p>
 &lt;p>&lt;code>Ethernet&lt;/code> to nazwa połączenia sieciowego.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">

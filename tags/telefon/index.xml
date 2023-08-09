@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>telefon on urbanowski.info</title><link>/tags/telefon/</link><description>Recent content in telefon on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/telefon/index.xml" rel="self" type="application/rss+xml"/><item><title>Przekierowanie połączeń PlusGSM</title><link>/przekierowanie-po%C5%82%C4%85cze%C5%84-plusgsm/</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/przekierowanie-po%C5%82%C4%85cze%C5%84-plusgsm/</guid><description>&lt;p>Przekierowanie połączeń PlusGSM (możliwe że inni operatorzy tak samo)&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>telefon on urbanowski.info</title><link>/tags/telefon.html</link><description>Recent content in telefon on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/telefon/index.xml" rel="self" type="application/rss+xml"/><item><title>Przekierowanie połączeń PlusGSM</title><link>/przekierowanie-po%C5%82%C4%85cze%C5%84-plusgsm.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/przekierowanie-po%C5%82%C4%85cze%C5%84-plusgsm.html</guid><description>&lt;p>Przekierowanie połączeń PlusGSM (możliwe że inni operatorzy tak samo)&lt;/p>
 &lt;h2 id="włączenie">Włączenie&lt;/h2>
 &lt;ul>
 &lt;li>&lt;kbd>*&lt;em>21&lt;/em>&lt;/kbd>+48xxxxxxxxx&lt;kbd>#&lt;/kbd> - włączenie dla wszystkich połączeń&lt;/li>
@@ -12,7 +12,7 @@
 &lt;li>&lt;kbd>##61#&lt;/kbd> - wyłączenie przekierowania gdy nie odbierasz&lt;/li>
 &lt;li>&lt;kbd>##62#&lt;/kbd> - wyłączenie przekierowania gdy numer nieosiągalny&lt;/li>
 &lt;li>&lt;kbd>##67#&lt;/kbd> - wyłączenie przekierowania gdy numer zajęty&lt;/li>
-&lt;/ul></description></item><item><title>Przekierowanie numeru stacjonarnego</title><link>/przekierowanie-numeru-stacjonarnego/</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><guid>/przekierowanie-numeru-stacjonarnego/</guid><description>&lt;p>Jak włączyć przekierowanie numeru stacjonarnego?
+&lt;/ul></description></item><item><title>Przekierowanie numeru stacjonarnego</title><link>/przekierowanie-numeru-stacjonarnego.html</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><guid>/przekierowanie-numeru-stacjonarnego.html</guid><description>&lt;p>Jak włączyć przekierowanie numeru stacjonarnego?
 To bardzo proste.&lt;/p>
 &lt;h2 id="włączenie-przekierowania">Włączenie przekierowania&lt;/h2>
 &lt;ul>
