@@ -22,9 +22,9 @@ DefaultContentLanguage: pl
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage: false
 
-permalinks:
-    post: /:title/
-    page: /:slug/
+# permalinks:
+#     post: /:title/
+#     page: /:slug/
 
 params:
     mainSections:
