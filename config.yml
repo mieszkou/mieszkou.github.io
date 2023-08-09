@@ -3,6 +3,7 @@ languageCode: pl
 title: urbanowski.info
 theme: stack # PaperModX
 paginate: 10
+uglyURLs: true
 
 # permalinks:
 #   posts: /:title/
