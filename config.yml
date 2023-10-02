@@ -1,12 +1,14 @@
-baseURL: 
+baseURL: http://example.org/
 languageCode: pl
 title: urbanowski.info
 theme: stack # PaperModX
 paginate: 10
+# relativeURLs: true
 uglyURLs: true
 
-# permalinks:
-#   posts: /:title/
+permalinks:
+    #  post: /:title/
+     page: /:slug/
 
 # Change it to your Disqus shortname before using
 disqusShortname: https-urbanowski-info

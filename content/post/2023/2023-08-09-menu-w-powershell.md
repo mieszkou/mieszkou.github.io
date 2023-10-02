@@ -15,6 +15,12 @@ categories:
 
 Menu w PowerShell po którym można poruszać się strzałkami.
 
+![](assets/2023-08-09-22-17-56.png)
+
+![](assets/2023-07-26-09-12-01.png)
+
+![](2023-07-26-09-12-48.png)
+
 - https://qna.habr.com/answer?answer_id=1522379
 
 ```powershell
@@ -51,8 +57,6 @@ ShowMenu $menu 2
 I inna wersja zgapiona z Sophiascript:
 
 - https://github.com/farag2/Sophia-Script-for-Windows/blob/bf920bf64d7a3088a5c92f716602f018e2354af5/src/Sophia_Script_for_Windows_10_LTSC_2019/Module/Sophia.psm1#L836
-
-![](assets/2023-08-09-22-17-56.png)
 
 ```powershell
 	<#
