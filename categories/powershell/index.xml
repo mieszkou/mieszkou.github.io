@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PowerShell on urbanowski.info</title><link>/categories/powershell.html</link><description>Recent content in PowerShell on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Wed, 09 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>Menu w PowerShell</title><link>/post/2023/2023-08-09-menu-w-powershell.html</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>/post/2023/2023-08-09-menu-w-powershell.html</guid><description>&lt;p>Menu w PowerShell po którym można poruszać się strzałkami.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PowerShell on urbanowski.info</title><link>http://example.org/categories/powershell.html</link><description>Recent content in PowerShell on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Wed, 09 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>Menu w PowerShell</title><link>http://example.org/post/2023/2023-08-09-menu-w-powershell.html</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-08-09-menu-w-powershell.html</guid><description>&lt;p>Menu w PowerShell po którym można poruszać się strzałkami.&lt;/p>
+&lt;p>&lt;img src="assets/2023-08-09-22-17-56.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>&lt;img src="assets/2023-07-26-09-12-01.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>&lt;img src="2023-07-26-09-12-48.png"
+loading="lazy"
+>&lt;/p>
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://qna.habr.com/answer?answer_id=1522379" target="_blank" rel="noopener"
 >https://qna.habr.com/answer?answer_id=1522379&lt;/a>&lt;/li>
@@ -70,9 +79,6 @@
 &lt;li>&lt;a class="link" href="https://github.com/farag2/Sophia-Script-for-Windows/blob/bf920bf64d7a3088a5c92f716602f018e2354af5/src/Sophia_Script_for_Windows_10_LTSC_2019/Module/Sophia.psm1#L836" target="_blank" rel="noopener"
 >https://github.com/farag2/Sophia-Script-for-Windows/blob/bf920bf64d7a3088a5c92f716602f018e2354af5/src/Sophia_Script_for_Windows_10_LTSC_2019/Module/Sophia.psm1#L836&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="/assets/2023-08-09-22-17-56.png"
-loading="lazy"
->&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -275,7 +281,7 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Powershell: podniesienie uprawnień i wykonanie polecenia</title><link>/post/2023/2023-05-22-powershell-podniesienie-uprawnien.html</link><pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate><guid>/post/2023/2023-05-22-powershell-podniesienie-uprawnien.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post Powershell: podniesienie uprawnień i wykonanie polecenia" />&lt;div class="highlight">&lt;div class="chroma">
+&lt;/div></description></item><item><title>Powershell: podniesienie uprawnień i wykonanie polecenia</title><link>http://example.org/post/2023/2023-05-22-powershell-podniesienie-uprawnien.html</link><pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-05-22-powershell-podniesienie-uprawnien.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-33-57.png" alt="Featured image of post Powershell: podniesienie uprawnień i wykonanie polecenia" />&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
@@ -285,7 +291,7 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Start-Process&lt;/span> &lt;span class="n">powershell&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span> &lt;span class="n">-Verb&lt;/span> &lt;span class="n">RunAs&lt;/span> &lt;span class="n">-ArgumentList&lt;/span> &lt;span class="s2">&amp;#34;-NoProfile -ExecutionPolicy Bypass -Command &lt;/span>&lt;span class="se">`&amp;#34;&lt;/span>&lt;span class="s2">&amp;amp; {Install-Module -Name AzureAD -Force -AllowClobber}&lt;/span>&lt;span class="se">`&amp;#34;&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Powershell: nieudane próby logowania</title><link>/post/2023/2023-03-21-powershell-nieudane-proby-logowania-rdp.html</link><pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate><guid>/post/2023/2023-03-21-powershell-nieudane-proby-logowania-rdp.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post Powershell: nieudane próby logowania" />&lt;p>Aby policzyć nieudane próby logowania w kolejnych dniach za pomocą PowerShell, można użyć następującej komendy:&lt;/p>
+&lt;/div></description></item><item><title>Powershell: nieudane próby logowania</title><link>http://example.org/post/2023/2023-03-21-powershell-nieudane-proby-logowania-rdp.html</link><pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-03-21-powershell-nieudane-proby-logowania-rdp.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-33-57.png" alt="Featured image of post Powershell: nieudane próby logowania" />&lt;p>Aby policzyć nieudane próby logowania w kolejnych dniach za pomocą PowerShell, można użyć następującej komendy:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -314,11 +320,11 @@ loading="lazy"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Get-EventLog -LogName System -After $(Get-Date).AddMonths(-1) | Where { 6009,6005,6006 -contains $_.EventID}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PowerShell: linki</title><link>/post/2022/2022-05-16-03-44-21_powershelllinki_powershell-linki.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-03-44-21_powershelllinki_powershell-linki.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: linki" />&lt;h1 id="linki-z-materiałami-dotyczącymi-powershell-a">Linki z materiałami dotyczącymi powershell-a&lt;/h1>
+&lt;/div></description></item><item><title>PowerShell: linki</title><link>http://example.org/post/2022/2022-05-16-03-44-21_powershelllinki_powershell-linki.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>http://example.org/post/2022/2022-05-16-03-44-21_powershelllinki_powershell-linki.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: linki" />&lt;h1 id="linki-z-materiałami-dotyczącymi-powershell-a">Linki z materiałami dotyczącymi powershell-a&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/pl-pl/training/browse/" target="_blank" rel="noopener"
 >https://learn.microsoft.com/pl-pl/training/browse/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>PowerShell: Lista użytkowników i czas ostatniego logowania</title><link>/post/2022/2022-05-16-02-55-53_powershellwindows_powershell-lista-uzytkownikow-i-czas-ostatniego-logowania.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-02-55-53_powershellwindows_powershell-lista-uzytkownikow-i-czas-ostatniego-logowania.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Lista użytkowników i czas ostatniego logowania" />&lt;p>Lista użytkowników i czas ostatniego logowania:&lt;/p>
+&lt;/ul></description></item><item><title>PowerShell: Lista użytkowników i czas ostatniego logowania</title><link>http://example.org/post/2022/2022-05-16-02-55-53_powershellwindows_powershell-lista-uzytkownikow-i-czas-ostatniego-logowania.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>http://example.org/post/2022/2022-05-16-02-55-53_powershellwindows_powershell-lista-uzytkownikow-i-czas-ostatniego-logowania.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Lista użytkowników i czas ostatniego logowania" />&lt;p>Lista użytkowników i czas ostatniego logowania:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -327,7 +333,7 @@ loading="lazy"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">get-aduser -f * -pr lastlogondate|sort -property lastlogondate|ft samaccountname,lastlogondate -auto
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PowerShell: Reset uprawnień do wszystkich plików i katalogów</title><link>/post/2022/2022-05-16-02-50-26_powershellwindows_powershell-reset-uprawnien-do-wszystkich-plikow-i-katalogow.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-02-50-26_powershellwindows_powershell-reset-uprawnien-do-wszystkich-plikow-i-katalogow.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Reset uprawnień do wszystkich plików i katalogów" />&lt;p>Reset uprawnień do wszystkich plików i katalogów:&lt;/p>
+&lt;/div></description></item><item><title>PowerShell: Reset uprawnień do wszystkich plików i katalogów</title><link>http://example.org/post/2022/2022-05-16-02-50-26_powershellwindows_powershell-reset-uprawnien-do-wszystkich-plikow-i-katalogow.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>http://example.org/post/2022/2022-05-16-02-50-26_powershellwindows_powershell-reset-uprawnien-do-wszystkich-plikow-i-katalogow.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Reset uprawnień do wszystkich plików i katalogów" />&lt;p>Reset uprawnień do wszystkich plików i katalogów:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -336,7 +342,7 @@ loading="lazy"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">icacls * /q /c /t /reset
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PowerShell: Zmiana sieci publicznej na prywatną</title><link>/post/2022/2022-05-16-02-54-34_powershellwindows_powershell-zmiana-sieci-publicznej-na-prywatna.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>/post/2022/2022-05-16-02-54-34_powershellwindows_powershell-zmiana-sieci-publicznej-na-prywatna.html</guid><description>&lt;img src="/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Zmiana sieci publicznej na prywatną" />&lt;p>Zmiana sieci publicznej na prywatną&lt;/p>
+&lt;/div></description></item><item><title>PowerShell: Zmiana sieci publicznej na prywatną</title><link>http://example.org/post/2022/2022-05-16-02-54-34_powershellwindows_powershell-zmiana-sieci-publicznej-na-prywatna.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>http://example.org/post/2022/2022-05-16-02-54-34_powershellwindows_powershell-zmiana-sieci-publicznej-na-prywatna.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-33-57.png" alt="Featured image of post PowerShell: Zmiana sieci publicznej na prywatną" />&lt;p>Zmiana sieci publicznej na prywatną&lt;/p>
 &lt;p>&lt;code>Ethernet&lt;/code> to nazwa połączenia sieciowego.&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
