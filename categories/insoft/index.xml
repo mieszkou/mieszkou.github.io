@@ -1,4 +1,162 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Insoft on urbanowski.info</title><link>http://example.org/categories/insoft.html</link><description>Recent content in Insoft on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/insoft/index.xml" rel="self" type="application/rss+xml"/><item><title>PC-Market: błąd drukowania EPrinter Printer is not currently printing</title><link>http://example.org/post/2022/2022-05-16-03-30-05_pcmarket-blad-drukowania-eprinter-printer-is-not-currently-printing.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>http://example.org/post/2022/2022-05-16-03-30-05_pcmarket-blad-drukowania-eprinter-printer-is-not-currently-printing.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: błąd drukowania EPrinter Printer is not currently printing" />&lt;p>Błąd drukowania - EPrinter Printer is not currently printing
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Insoft on urbanowski.info</title><link>http://example.org/categories/insoft.html</link><description>Recent content in Insoft on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/insoft/index.xml" rel="self" type="application/rss+xml"/><item><title>PC-Market, SCServer i inne - parametry wywołań</title><link>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</link><pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market, SCServer i inne - parametry wywołań" />&lt;h2 id="scserver">SCServer&lt;/h2>
+&lt;p>&lt;code>Scserver-x64.exe --instance 2&lt;/code> - instalacja kolejnej instancji SCServer&lt;/p>
+&lt;p>&lt;img src="assets/2023-10-09-20-40-38.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>Wywołanie instalatora &lt;code>SCserver-x64.exe --help&lt;/code> - lista parametrów:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Scserver 7.8.64.143
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Sposób użycia:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --help Wyświetlenie listy prawidłowych opcji
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --version Wyświetl informację o produkcie
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --unattendedmodeui &amp;lt;unattendedmodeui&amp;gt; Unattended Mode UI
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: none
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Dopuszczalne: none minimal minimalWithDialogs
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --optionfile &amp;lt;optionfile&amp;gt; Installation option file
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --debuglevel &amp;lt;debuglevel&amp;gt; Debug information level of verbosity
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: 2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Dopuszczalne: 0 1 2 3 4
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --mode &amp;lt;mode&amp;gt; Installation mode
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: win32
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Dopuszczalne: win32 unattended
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --debugtrace &amp;lt;debugtrace&amp;gt; Debug filename
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --enable-components &amp;lt;enable-components&amp;gt; Comma-separated list of components
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: Scserver
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Dopuszczalne: sybaseodbc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --disable-components &amp;lt;disable-components&amp;gt; Comma-separated list of components
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: sybaseodbc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Dopuszczalne: sybaseodbc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --installer-language &amp;lt;installer-language&amp;gt; Language selection
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: pl
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Dopuszczalne: pl
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --instance &amp;lt;instance&amp;gt; parametr umożliwia instalowanie kolejnej kopii scservera. Jako parametr należy podać kolejny numer kopii instancji. Uwaga! Podczas aktualizacji wybranej instancji należy uwzględniać ten parametr. Przykład wywołania: --instance &amp;lt;numer kolejnej instancji&amp;gt; np. --instance 2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --service &amp;lt;service&amp;gt; parametr umożliwia wybór trybu pracy scservera (aplikacja/usługa). Domyślnie instalowany jest jako usługa. Parametry wywołania: --service 1 - usługa (domyślnie) --service 0 - aplikacja
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: 1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --upgrade &amp;lt;upgrade&amp;gt; parametr umożliwia przygotowanie plików do automatycznej aktualizacji w centrali i na sklepach. Przykład wywołania: --upgrade 1 - tak nastąpi automatyczna aktualizacja, --upgrade 0 - nie (domyślnie), standardowa aktualizacja
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: 0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --CzyAutoStartUslugi &amp;lt;CzyAutoStartUslugi&amp;gt; Włącz automatyczne uruchamianie usługi Scserver
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: 1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --JakiAutoStart &amp;lt;JakiAutoStart&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: mysql
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Dopuszczalne: mysql postgresql mssql brak
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --BazaIP &amp;lt;BazaIP&amp;gt; IP Serwera:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --BazaPort &amp;lt;BazaPort&amp;gt; Port:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: 3306
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --BazaNazwa &amp;lt;BazaNazwa&amp;gt; Nazwa bazy:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --BazaSerial &amp;lt;BazaSerial&amp;gt; Nr seryjny bazy:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --SerwerIp &amp;lt;SerwerIp&amp;gt; IP zdalnego Serwera:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --SerwerPort &amp;lt;SerwerPort&amp;gt; Port:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: 59999
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --SerwerTimeout &amp;lt;SerwerTimeout&amp;gt; Timeout do nawiązania połączenia:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Domyślnie: 360
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PC-Market: błąd drukowania EPrinter Printer is not currently printing</title><link>http://example.org/post/2022/2022-05-16-03-30-05_pcmarket-blad-drukowania-eprinter-printer-is-not-currently-printing.html</link><pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate><guid>http://example.org/post/2022/2022-05-16-03-30-05_pcmarket-blad-drukowania-eprinter-printer-is-not-currently-printing.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market: błąd drukowania EPrinter Printer is not currently printing" />&lt;p>Błąd drukowania - EPrinter Printer is not currently printing
 Trzeba odinstalować aktualizacje:&lt;/p>
 &lt;ul>
 &lt;li>KB3177725 - dla Windows 7, 8&lt;/li>
