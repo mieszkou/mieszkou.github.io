@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>urbanowski.info</title><link>http://example.org/</link><description>Recent content on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title>PC-Market, SCServer i inne - parametry wywołań</title><link>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</link><pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market, SCServer i inne - parametry wywołań" />&lt;h2 id="scserver">SCServer&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>urbanowski.info</title><link>http://example.org/</link><description>Recent content on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Wed, 18 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title>PC-Market - kasowanie logów kas</title><link>http://example.org/post/2023/2023-10-18-insoft-kasowanie-logow-kas.html</link><pubDate>Wed, 18 Oct 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-10-18-insoft-kasowanie-logow-kas.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market - kasowanie logów kas" />&lt;p>Kasowanie logów kas&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">forfiles /S /D -14 /M NEO_LOG*.TXT /C &lt;span class="s2">&amp;#34;cmd /c echo @path &amp;amp; del @path&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rem forfiles /S /M ARCH2.EXP /C &lt;span class="s2">&amp;#34;cmd /c echo @path &amp;amp; del @path&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PC-Market, SCServer i inne - parametry wywołań</title><link>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</link><pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market, SCServer i inne - parametry wywołań" />&lt;h2 id="scserver">SCServer&lt;/h2>
 &lt;p>&lt;code>Scserver-x64.exe --instance 2&lt;/code> - instalacja kolejnej instancji SCServer&lt;/p>
 &lt;p>&lt;img src="assets/2023-10-09-20-40-38.png"
 loading="lazy"
