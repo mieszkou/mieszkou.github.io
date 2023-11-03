@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>powershell on urbanowski.info</title><link>http://example.org/tags/powershell.html</link><description>Recent content in powershell on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Wed, 09 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>Menu w PowerShell</title><link>http://example.org/post/2023/2023-08-09-menu-w-powershell.html</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-08-09-menu-w-powershell.html</guid><description>&lt;p>Menu w PowerShell po którym można poruszać się strzałkami.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>powershell on urbanowski.info</title><link>http://example.org/tags/powershell.html</link><description>Recent content in powershell on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Wed, 18 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows Terminal - split and run</title><link>http://example.org/post/2023/2023-11-03-split-windows-terminal.html</link><pubDate>Wed, 18 Oct 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-11-03-split-windows-terminal.html</guid><description>&lt;p>Kasowanie logów kas&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wt -M -d &lt;span class="s2">&amp;#34;./&amp;#34;&lt;/span> ping wp.pl -t&lt;span class="p">;&lt;/span> ^
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sp -V -d &lt;span class="s2">&amp;#34;./&amp;#34;&lt;/span> ping wp.pl -t&lt;span class="p">;&lt;/span> ^
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mf left&lt;span class="p">;&lt;/span> ^
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sp -H -d &lt;span class="s2">&amp;#34;./&amp;#34;&lt;/span> ping wp.pl -t&lt;span class="p">;&lt;/span> ^
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mf right&lt;span class="p">;&lt;/span> ^
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sp -H -d &lt;span class="s2">&amp;#34;./&amp;#34;&lt;/span> ping wp.pl -t
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Menu w PowerShell</title><link>http://example.org/post/2023/2023-08-09-menu-w-powershell.html</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-08-09-menu-w-powershell.html</guid><description>&lt;p>Menu w PowerShell po którym można poruszać się strzałkami.&lt;/p>
 &lt;p>&lt;img src="assets/2023-08-09-22-17-56.png"
 loading="lazy"
 >&lt;/p>
