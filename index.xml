@@ -30,7 +30,25 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sp -H -d &lt;span class="s2">&amp;#34;./&amp;#34;&lt;/span> ping wp.pl -t
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>PC-Market, SCServer i inne - parametry wywołań</title><link>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</link><pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market, SCServer i inne - parametry wywołań" />&lt;h2 id="scserver">SCServer&lt;/h2>
+&lt;/div></description></item><item><title>PC-Market, SCServer i inne - parametry wywołań</title><link>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</link><pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-10-09-insoft-parametry-wywolan.html</guid><description>&lt;img src="http://example.org/img/2023-02-12-23-08-32.png" alt="Featured image of post PC-Market, SCServer i inne - parametry wywołań" />&lt;h2 id="pc-market">PC-Market&lt;/h2>
+&lt;p>Ustawienie bazy i użytkownika:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">PCMWin.exe -cpar&amp;#34;Baza=pcmarket&amp;#34; -NoCparErr
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PCMWin.exe -cpar&amp;#34;Baza=pcmarket;Id=ADMIN;Haslo=admin&amp;#34; -NoCparErr
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PcmEDI.exe -cpar&amp;#34;Baza=pcmarket;Id=ADMIN;Haslo=admin&amp;#34; -NoCparErr -silent
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="scserver">SCServer&lt;/h2>
 &lt;p>&lt;code>Scserver-x64.exe --instance 2&lt;/code> - instalacja kolejnej instancji SCServer&lt;/p>
 &lt;p>&lt;img src="assets/2023-10-09-20-40-38.png"
 loading="lazy"
