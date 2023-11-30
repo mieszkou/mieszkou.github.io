@@ -13,6 +13,18 @@ categories:
     - Insoft
 ---
 
+## PC-Market
+
+Ustawienie bazy i użytkownika:
+
+```
+PCMWin.exe -cpar"Baza=pcmarket" -NoCparErr
+
+PCMWin.exe -cpar"Baza=pcmarket;Id=ADMIN;Haslo=admin" -NoCparErr
+
+PcmEDI.exe -cpar"Baza=pcmarket;Id=ADMIN;Haslo=admin" -NoCparErr -silent
+```
+
 ## SCServer
 
 `Scserver-x64.exe --instance 2` - instalacja kolejnej instancji SCServer
