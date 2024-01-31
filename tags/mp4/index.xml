@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mp4 on urbanowski.info</title><link>http://example.org/tags/mp4.html</link><description>Recent content in mp4 on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Fri, 17 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/mp4/index.xml" rel="self" type="application/rss+xml"/><item><title>Edytory video, montaż video</title><link>http://example.org/post/2023/2023-02-17-edytory-video.html</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023/2023-02-17-edytory-video.html</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mp4 on urbanowski.info</title><link>https://urbanowski.info/tags/mp4.html</link><description>Recent content in mp4 on urbanowski.info</description><generator>Hugo -- gohugo.io</generator><language>pl</language><lastBuildDate>Fri, 17 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://urbanowski.info/tags/mp4/index.xml" rel="self" type="application/rss+xml"/><item><title>Edytory video, montaż video</title><link>https://urbanowski.info/post/2023/2023-02-17-edytory-video.html</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://urbanowski.info/post/2023/2023-02-17-edytory-video.html</guid><description>&lt;blockquote>
 &lt;p>tu są testy wstawiania obrazów w pliku &lt;code>md&lt;/code> dla Hugo. Można skrolować dalej&amp;hellip;.&lt;/p>
 &lt;/blockquote>
 &lt;ul>
@@ -11,6 +11,6 @@
 &lt;li>🎥 &lt;a class="link" href="https://www.shotcut.org/" target="_blank" rel="noopener"
 >https://www.shotcut.org/&lt;/a> - edytor video&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="http://example.org/post/2023/2023-02-17-11-45-50.png"
+&lt;p>&lt;img src="https://urbanowski.info/post/2023/2023-02-17-11-45-50.png"
 loading="lazy"
->&lt;/p></description></item><item><title>Edytory video, montaż video</title><link>http://example.org/post/2023.html</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>http://example.org/post/2023.html</guid><description>&lt;p>&lt;a class="link" href="2023-02-17-edytory-video.md" >link&lt;/a>&lt;/p></description></item></channel></rss>
+>&lt;/p></description></item><item><title>Edytory video, montaż video</title><link>https://urbanowski.info/post/2023.html</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://urbanowski.info/post/2023.html</guid><description>&lt;p>&lt;a class="link" href="2023-02-17-edytory-video.md" >link&lt;/a>&lt;/p></description></item></channel></rss>
