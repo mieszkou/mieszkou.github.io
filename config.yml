@@ -1,7 +1,7 @@
 baseURL: https://urbanowski.info/
 languageCode: pl
 title: urbanowski.info
-theme: stack # PaperModX
+theme: stack 
 paginate: 10
 # relativeURLs: true
 uglyURLs: true

@@ -1,0 +1,15 @@
+<p>
+    <img src="{{ path.Dir .Page.Permalink | safeURL }}/{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}"{{ end }} />
+
+{{ $u := urls.Parse .Page.Permalink }}
+{{ if eq ($u.IsAbs eq false) }}
+{{        printf "we" }}
+{{       end }}
+
+
+
+
+
+</b>
+
+</p>

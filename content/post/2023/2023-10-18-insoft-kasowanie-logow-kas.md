@@ -20,3 +20,5 @@ forfiles /S /D -14 /M NEO_LOG*.TXT /C "cmd /c echo @path & del @path"
 rem forfiles /S /M ARCH2.EXP /C "cmd /c echo @path & del @path"
 pause
 ```
+
+![](assets/2024-02-03-12-05-55.png)

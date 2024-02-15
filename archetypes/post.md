@@ -1,16 +1,31 @@
 ---
-title: "Title"
-description: 
-date: 2023-08-09
+title: "{{ replace .Name "-" " " | title }}"
+description: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
 image: 
 hidden: false
 comments: true
 draft: false
 tags:
-    - video
-    - mp4
-    - edytor
-    - youtube
+	- sql
+	- mssql
+	- powershell
+	- windows
+	- insoft
+	- pcmarket
+	- programowanie
+	- oneliner
+	- edytor
+	- git
 categories:
-    - Programy których używam
+	- PowerShell
+	- Insoft
+	- Administracja
+	- Programy których używam
+	- MSSQL
+	- Programowanie
+	- PHP
+	- SQL
+	- Git
+	- Linki
 ---

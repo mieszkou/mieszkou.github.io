@@ -1,0 +1,5 @@
+site: public
+output_subdir: pagefind
+exclude_selectors:
+  - header
+root-selector: main
