@@ -7,11 +7,11 @@ hidden: false
 comments: true
 draft: false
 tags:
-	- powershell
-	- windows
-	- oneliner
+    - powershell
+    - windows
+    - oneliner
 categories:
-	- PowerShell
+    - PowerShell
 ---
 
 ```powershell
