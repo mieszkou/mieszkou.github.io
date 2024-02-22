@@ -18,6 +18,7 @@ Reset stosu TCP, pomaga często na problemy z połączeniem VPN. Polecenia w okn
 netsh int ip reset
 netsh int ipv4 reset
 netsh int ipv6 reset
-```
+``` 
+
 
 Potem restart komputera.
