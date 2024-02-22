@@ -7,25 +7,25 @@ hidden: false
 comments: true
 draft: false
 tags:
-	- sql
-	- mssql
-	- powershell
-	- windows
-	- insoft
-	- pcmarket
-	- programowanie
-	- oneliner
-	- edytor
-	- git
+    - sql
+    - mssql
+    - powershell
+    - windows
+    - insoft
+    - pcmarket
+    - programowanie
+    - oneliner
+    - edytor
+    - git
 categories:
-	- PowerShell
-	- Insoft
-	- Administracja
-	- Programy których używam
-	- MSSQL
-	- Programowanie
-	- PHP
-	- SQL
-	- Git
-	- Linki
+    - PowerShell
+    - Insoft
+    - Administracja
+    - Programy których używam
+    - MSSQL
+    - Programowanie
+    - PHP
+    - SQL
+    - Git
+    - Linki
 ---
