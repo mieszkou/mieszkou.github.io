@@ -1,6 +1,6 @@
 ---
-title: "Powershell Download and Install"
-description: "Powershell Download and Install"
+title: "Pobierz i uruchom plik jednym poleceniem"
+description: "Powershell - Pobierz i uruchom plik jednym poleceniem / Download the executable file and run it with single command"
 date: 2024-03-25T15:41:31+01:00
 image: 
 hidden: false
