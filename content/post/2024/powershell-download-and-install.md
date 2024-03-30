@@ -17,6 +17,8 @@ categories:
 
 Jak pobrać plik z internetu i go uruchomić?
 
+
+
 Może tak: 
 
 Skopiuj do schowka:
