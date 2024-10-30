@@ -1,16 +1,15 @@
 ---
 title: "TESTOWY"
-description: "Mssql Rozmiar Plikow I Danych"
-date: 2024-10-30T17:07:48+01:00
+description: "Teściki"
+date: 2024-10-30
 image: 
 hidden: false
 comments: true
 draft: false
 tags:
-    - sql
-    - mssql
+    - test
 categories:
-    - MSSQL
+    - TEST
 ---
 
 ```sql
