@@ -1,5 +1,5 @@
 ---
-title: "TESTOWY"
+title: "TESTOsfdgfdg dWY"
 description: "Teściki"
 date: 2024-10-30
 image: 
@@ -11,6 +11,29 @@ tags:
 categories:
     - TEST
 ---
+
+sdfg sdfgsdfsdfg dsfg
+ sdfg sdfgsdfg sdfg sdfg
+ sdf gsdgf sdgfsdfgsdfg
+ dsgf 
+
+ sf sdfg sdfgsf d
+
+ -sdfg sdfg sdfg fsdg
+ - sdfgsdfgdsgf sdgfs
+ - - sdfgsdgf sdgfsdgf
+ - dsgf sdgf sdgf sdfg
+ - s dfgsdgfs d
+
+
+# testty
+
+```
+- [ ]  sdfgsdfg sdgf
+- [ ] dsfghdsgdfg
+
+```
+
 
 ```sql
 select
