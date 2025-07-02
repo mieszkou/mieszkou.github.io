@@ -13,7 +13,7 @@ categories:
     - Programy
 ---
 
-## .reg file
+## `.reg` file
 
 
 ```
