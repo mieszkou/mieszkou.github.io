@@ -13,6 +13,9 @@ categories:
     - Programy
 ---
 
+## .reg file
+
+
 ```
 Windows Registry Editor Version 5.00
 
