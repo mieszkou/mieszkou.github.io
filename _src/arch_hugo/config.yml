@@ -1,8 +1,8 @@
 baseURL: https://urbanowski.info/
 languageCode: pl
 title: urbanowski.info
-theme: stack 
-paginate: 10
+theme: mi3 
+pagination.pagerSize: 10
 # relativeURLs: true
 uglyURLs: true
 

@@ -1,0 +1,11 @@
+baseURL = 'https://urbanowski.info/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'mi3v2'
+relativeURLs = false
+canonifyURLs = true
+uglyURLs = true
+
+# [permalinks]
+# post = "/:title/"
+# page = "/:slug/"
