@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail]
+@="Mozilla Thunderbird"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Clients\Mail]
+@="Mozilla Thunderbird"
