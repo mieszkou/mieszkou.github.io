@@ -1,11 +1,11 @@
 baseURL = 'https://urbanowski.info/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'mi3v2'
+languageCode = 'pl-pl'
+title = 'urbanowski.info | home page'
+theme = 'PaperMod'
 relativeURLs = false
 canonifyURLs = true
 uglyURLs = true
 
-# [permalinks]
-# post = "/:title/"
-# page = "/:slug/"
+[permalinks]
+ post = "/:title/"
+ page = "/:slug/"
