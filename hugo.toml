@@ -1,6 +1,6 @@
 baseURL = 'https://urbanowski.info/'
 locale = 'pl'
-title = 'urbanowski.info'
+title = 'urbanowski.info | home page'
 theme = 'PaperMod'
 relativeURLs = false
 canonifyURLs = true
