@@ -1,10 +1,22 @@
 baseURL = 'https://urbanowski.info/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'mi3v2'
+locale = 'pl'
+title = 'urbanowski.info'
+theme = 'PaperMod'
 relativeURLs = false
 canonifyURLs = true
 uglyURLs = true
+
+ignoreLogs = [
+	'warning-goldmark-raw-html'
+	]
+
+[params]
+ShowCodeCopyButtons = true
+    
+[outputs]
+home = [ "HTML", "RSS", "JSON" ]    
+page = [ "HTML", "RSS", "JSON" ]   
+post = [ "HTML", "RSS", "JSON" ]   
 
 # [permalinks]
 # post = "/:title/"
